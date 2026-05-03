@@ -1,0 +1,38 @@
+name: Daily Meme Digest
+
+on:
+  schedule:
+    # Svako jutro u 08:00 UTC = 09:00 CET (zimi) / 10:00 CEST (leti)
+    # Za letnje računanje (CEST = UTC+2), promeni na "0 7 * * *"
+    - cron: "0 8 * * *"
+  workflow_dispatch: # Omogućava ručno pokretanje iz GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repozitorijuma
+        uses: actions/checkout@v4
+
+      - name: Podesi Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instaliraj zavisnosti
+        run: pip install requests pytz
+
+      - name: Pokreni skript za meme
+        run: python fetch_memes.py
+
+      - name: Objavi promene na GitHub Pages
+        run: |
+          git config user.name "Meme Bot"
+          git config user.email "meme-bot@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "🔥 Dnevni meme digest - $(date +'%d.%m.%Y')"
+          git push
