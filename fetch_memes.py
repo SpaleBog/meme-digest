@@ -7,7 +7,7 @@ import pytz
 import re
 import time
 
-SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "holesome", "retardedcornfieldcum", "ihaveihaveihavereddit"]
+SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "ihaveihaveihavereddit"]
 TOP_N = 10
 
 HEADERS = {
@@ -233,7 +233,7 @@ def generate_html(all_memes_by_sub, generated_at):
                 """
 
         sections_html += f"""
-        <section class="sub-section">
+        <section class="sub-section" data-sub="{sub}">
             <h2 class="sub-title">r/{sub}</h2>
             <div class="meme-grid">{cards_html}</div>
         </section>
@@ -257,7 +257,7 @@ def generate_html(all_memes_by_sub, generated_at):
     --text: #f0f0f0;
     --muted: #888;
     --border: #2a2a32;
-    --radius: 12px;
+    --radius: 14px;
   }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   body {{
@@ -267,10 +267,12 @@ def generate_html(all_memes_by_sub, generated_at):
     min-height: 100vh;
     background-image: radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255,69,0,0.12) 0%, transparent 60%);
   }}
-  header {{ text-align: center; padding: 3rem 1rem 2rem; border-bottom: 1px solid var(--border); }}
+
+  /* ===== HEADER ===== */
+  header {{ text-align: center; padding: 2rem 1rem 1.5rem; border-bottom: 1px solid var(--border); }}
   .logo {{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-size: clamp(2.2rem, 8vw, 5rem);
     letter-spacing: 0.05em;
     background: linear-gradient(135deg, #ff4500, #ff8c42);
     -webkit-background-clip: text;
@@ -278,59 +280,121 @@ def generate_html(all_memes_by_sub, generated_at):
     background-clip: text;
     line-height: 1;
   }}
-  .tagline {{ color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }}
+  .tagline {{ color: var(--muted); font-size: 0.85rem; margin-top: 0.4rem; letter-spacing: 0.08em; text-transform: uppercase; }}
   .date-badge {{
-    display: inline-block; margin-top: 1rem;
+    display: inline-block; margin-top: 0.8rem;
     background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 99px; padding: 0.3rem 1.1rem;
-    font-size: 0.85rem; color: var(--accent2); font-weight: 500;
+    border-radius: 99px; padding: 0.3rem 1rem;
+    font-size: 0.82rem; color: var(--accent2); font-weight: 500;
   }}
-  main {{ max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }}
-  .sub-section {{ margin-bottom: 3.5rem; }}
+
+  /* ===== NAV TABS (mobile subreddit switcher) ===== */
+  .sub-nav {{
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 1rem 1rem 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }}
+  .sub-nav::-webkit-scrollbar {{ display: none; }}
+  .sub-tab {{
+    flex-shrink: 0;
+    padding: 0.45rem 1rem;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }}
+  .sub-tab.active {{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }}
+
+  /* ===== MAIN ===== */
+  main {{ max-width: 1100px; margin: 0 auto; padding: 1.2rem 1rem 4rem; }}
+  .sub-section {{ display: none; }}
+  .sub-section.active {{ display: block; }}
+
   .sub-title {{
-    font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
-    letter-spacing: 0.08em; color: var(--accent); margin-bottom: 1.2rem;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;
+    letter-spacing: 0.08em; color: var(--accent); margin-bottom: 1rem;
     display: flex; align-items: center; gap: 0.5rem;
   }}
   .sub-title::after {{
     content: ''; flex: 1; height: 1px;
     background: linear-gradient(to right, var(--border), transparent); margin-left: 0.5rem;
   }}
-  .meme-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }}
+
+  /* ===== GRID ===== */
+  /* Desktop: 3 kolone, Tablet: 2, Mobile: 1 */
+  .meme-grid {{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }}
+  @media (max-width: 900px) {{
+    .meme-grid {{ grid-template-columns: repeat(2, 1fr); }}
+  }}
+  @media (max-width: 560px) {{
+    .meme-grid {{ grid-template-columns: 1fr; }}
+  }}
+
+  /* ===== CARDS ===== */
   .meme-card {{
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius); overflow: hidden;
     transition: transform 0.2s ease, border-color 0.2s ease;
-    animation: fadeUp 0.4s ease both;
-    animation-delay: calc(var(--i) * 0.05s);
+    animation: fadeUp 0.35s ease both;
+    animation-delay: calc(var(--i) * 0.04s);
+    display: flex;
+    flex-direction: column;
   }}
-  .meme-card:hover {{ transform: translateY(-4px); border-color: var(--accent); }}
+  .meme-card:hover {{ transform: translateY(-3px); border-color: var(--accent); }}
   @keyframes fadeUp {{
-    from {{ opacity: 0; transform: translateY(16px); }}
+    from {{ opacity: 0; transform: translateY(14px); }}
     to   {{ opacity: 1; transform: translateY(0); }}
   }}
-  .rank {{ font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0; }}
+
+  .rank {{
+    font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem;
+    letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0;
+  }}
   .meme-img-wrap {{
-    width: 100%; aspect-ratio: 16/9; background: var(--surface2);
+    width: 100%; aspect-ratio: 1/1;
+    background: var(--surface2);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }}
   .meme-img-wrap img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
   .no-img {{ font-size: 3rem; opacity: 0.3; }}
-  .meme-info {{ padding: 0.9rem; display: flex; flex-direction: column; gap: 0.7rem; }}
-  .meme-title {{ font-size: 0.88rem; line-height: 1.4; color: var(--text); }}
-  .meme-stats {{ display: flex; gap: 0.6rem; flex-wrap: wrap; }}
+  .meme-info {{ padding: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }}
+  .meme-title {{ font-size: 0.85rem; line-height: 1.4; color: var(--text); }}
+  .meme-stats {{ display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: auto; padding-top: 0.3rem; }}
   .stat {{
-    font-size: 0.78rem; background: var(--surface2);
-    border-radius: 6px; padding: 0.2rem 0.6rem; color: var(--muted); font-weight: 500;
+    font-size: 0.74rem; background: var(--surface2);
+    border-radius: 6px; padding: 0.2rem 0.5rem; color: var(--muted); font-weight: 500;
   }}
   .stat.ups {{ color: var(--accent2); }}
   .view-btn {{
-    display: inline-block; font-size: 0.8rem; font-weight: 700;
-    color: var(--accent); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s;
+    display: block; text-align: center;
+    font-size: 0.8rem; font-weight: 700;
+    color: white; background: var(--accent);
+    text-decoration: none; border-radius: 8px;
+    padding: 0.5rem; margin-top: 0.5rem;
+    transition: background 0.15s;
   }}
-  .view-btn:hover {{ color: var(--accent2); }}
-  footer {{ text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }}
-  @media (max-width: 500px) {{ .meme-grid {{ grid-template-columns: 1fr; }} }}
+  .view-btn:hover {{ background: var(--accent2); }}
+
+  /* ===== FOOTER ===== */
+  footer {{ text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }}
 </style>
 </head>
 <body>
@@ -339,14 +403,40 @@ def generate_html(all_memes_by_sub, generated_at):
   <p class="tagline">Najbolji mimovi dana • Automatski sakupljeno</p>
   <span class="date-badge">📅 {date_str} u {time_str} CET</span>
 </header>
-<main>{sections_html}</main>
+
+<nav class="sub-nav" id="subNav"></nav>
+<main id="mainContent">{sections_html}</main>
+
 <footer>
-  Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages<br>
-  Sortirano po: upvote-ovi × ratio | Poslednje ažuriranje: {date_str} {time_str}
+  Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages, r/ihaveihaveihavereddit<br>
+  Sortirano po: upvote-ovi × ratio + engagement | Poslednje ažuriranje: {date_str} {time_str}
 </footer>
+
+<script>
+  // Skupi sve sekcije i napravi tabove
+  const sections = document.querySelectorAll('.sub-section');
+  const nav = document.getElementById('subNav');
+
+  sections.forEach((sec, idx) => {{
+    const name = sec.dataset.sub;
+    const btn = document.createElement('button');
+    btn.className = 'sub-tab' + (idx === 0 ? ' active' : '');
+    btn.textContent = 'r/' + name;
+    btn.onclick = () => {{
+      document.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      sec.classList.add('active');
+    }};
+    nav.appendChild(btn);
+    if (idx === 0) sec.classList.add('active');
+  }});
+</script>
 </body>
 </html>"""
     return html
+
+
 
 def main():
     print("🚀 Sakupljam meme...")
