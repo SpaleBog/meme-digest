@@ -18,25 +18,15 @@
     --border: #2a2a32;
     --radius: 12px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     min-height: 100vh;
-    background-image:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255,69,0,0.12) 0%, transparent 60%);
+    background-image: radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255,69,0,0.12) 0%, transparent 60%);
   }
-
-  header {
-    text-align: center;
-    padding: 3rem 1rem 2rem;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
-
+  header { text-align: center; padding: 3rem 1rem 2rem; border-bottom: 1px solid var(--border); }
   .logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.8rem, 8vw, 5rem);
@@ -47,194 +37,366 @@
     background-clip: text;
     line-height: 1;
   }
-
-  .tagline {
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
+  .tagline { color: var(--muted); font-size: 0.95rem; margin-top: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; }
   .date-badge {
-    display: inline-block;
-    margin-top: 1rem;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 99px;
-    padding: 0.3rem 1.1rem;
-    font-size: 0.85rem;
-    color: var(--accent2);
-    font-weight: 500;
+    display: inline-block; margin-top: 1rem;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 99px; padding: 0.3rem 1.1rem;
+    font-size: 0.85rem; color: var(--accent2); font-weight: 500;
   }
-
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
-  }
-
-  .sub-section {
-    margin-bottom: 3.5rem;
-  }
-
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .sub-section { margin-bottom: 3.5rem; }
   .sub-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+    letter-spacing: 0.08em; color: var(--accent); margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 0.5rem;
   }
-
   .sub-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--border), transparent);
-    margin-left: 0.5rem;
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--border), transparent); margin-left: 0.5rem;
   }
-
-  .meme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.2rem;
-  }
-
+  .meme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
   .meme-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
     transition: transform 0.2s ease, border-color 0.2s ease;
     animation: fadeUp 0.4s ease both;
     animation-delay: calc(var(--i) * 0.05s);
   }
-
-  .meme-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-  }
-
+  .meme-card:hover { transform: translateY(-4px); border-color: var(--accent); }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
-  .rank {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    padding: 0.5rem 0.8rem 0;
-  }
-
+  .rank { font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0; }
   .meme-img-wrap {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: var(--surface2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 100%; aspect-ratio: 16/9; background: var(--surface2);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
-
-  .meme-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .no-img {
-    font-size: 3rem;
-    opacity: 0.3;
-  }
-
-  .meme-info {
-    padding: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
-  .meme-title {
-    font-size: 0.88rem;
-    line-height: 1.4;
-    color: var(--text);
-  }
-
-  .meme-stats {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
-
+  .meme-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .no-img { font-size: 3rem; opacity: 0.3; }
+  .meme-info { padding: 0.9rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .meme-title { font-size: 0.88rem; line-height: 1.4; color: var(--text); }
+  .meme-stats { display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .stat {
-    font-size: 0.78rem;
-    background: var(--surface2);
-    border-radius: 6px;
-    padding: 0.2rem 0.6rem;
-    color: var(--muted);
-    font-weight: 500;
+    font-size: 0.78rem; background: var(--surface2);
+    border-radius: 6px; padding: 0.2rem 0.6rem; color: var(--muted); font-weight: 500;
   }
-
   .stat.ups { color: var(--accent2); }
-
   .view-btn {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: color 0.15s;
+    display: inline-block; font-size: 0.8rem; font-weight: 700;
+    color: var(--accent); text-decoration: none; letter-spacing: 0.03em; transition: color 0.15s;
   }
-
   .view-btn:hover { color: var(--accent2); }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-    border-top: 1px solid var(--border);
-  }
-
-  @media (max-width: 500px) {
-    .meme-grid { grid-template-columns: 1fr; }
-  }
+  footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+  @media (max-width: 500px) { .meme-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <header>
   <div class="logo">🔥 Meme Digest</div>
-  <p class="tagline">Najbol­ji mimovi dana • Auto­matski sakupljeno</p>
-  <span class="date-badge">📅 04.05.2026 u 02:07 CET</span>
+  <p class="tagline">Najbolji mimovi dana • Automatski sakupljeno</p>
+  <span class="date-badge">📅 04.05.2026 u 02:19 CET</span>
 </header>
 <main>
-  
         <section class="sub-section">
             <h2 class="sub-title">r/shitposting</h2>
-            <div class="meme-grid"></div>
+            <div class="meme-grid">
+                <div class="meme-card" style="--i:1">
+                    <div class="rank">#1</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/kdl5iimravyg1.jpeg?width=640&crop=smart&auto=webp&s=1c6dd772221f858d5fe8a2fe009b6ebe7de73f5f" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">They asking some real question here!</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2dri8/they_asking_some_real_question_here/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:2">
+                    <div class="rank">#2</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/6xa4drnsqtyg1.jpeg?width=640&crop=smart&auto=webp&s=372f72dfffadb66646df37c8d86829ee8ed99bef" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">📡📡📡</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t27m9p/_/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:3">
+                    <div class="rank">#3</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/94kh2n2lsuyg1.jpeg?width=640&crop=smart&auto=webp&s=e19ea89f0296c17680b9e6a99970631fe577abae" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">3 in 1 head ahh 😭✌️</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2bwjg/3_in_1_head_ahh/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:4">
+                    <div class="rank">#4</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/rhpkxs2axwyg1.jpeg?width=320&crop=smart&auto=webp&s=917df14b36b1f208856ae899f70e1b7a7effd7e7" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">📡📡📡</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2jla0/_/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:5">
+                    <div class="rank">#5</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/jpak446k7xyg1.jpeg?width=640&crop=smart&auto=webp&s=ea725c401766d23007aab9ff852c8ea3a5086acf" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">📡📡📡</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2kuv5/_/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:6">
+                    <div class="rank">#6</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/mr5bqny90vyg1.jpeg?width=640&crop=smart&auto=webp&s=de41e916bcf12141336539e445c84e5f93a4ba24" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Get over it bro</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2cpbp/get_over_it_bro/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:7">
+                    <div class="rank">#7</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/0bvt3ph5zyyg1.jpeg?width=640&crop=smart&auto=webp&s=29d039abf7eefd53dc852f8a77bc215306009af3" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Aethiests</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2u5jj/aethiests/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:8">
+                    <div class="rank">#8</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/33qturih4yyg1.jpeg?width=640&crop=smart&auto=webp&s=cf3507e935bbce85830398f98e963a746f1b3720" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">📡📡📡</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2phyv/_/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:9">
+                    <div class="rank">#9</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/6pcv5jiymvyg1.jpeg?width=640&crop=smart&auto=webp&s=5c9b0104654d7728fe5229758419ec3dbfe5744c" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">📡📡📡</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t2ezec/_/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:10">
+                    <div class="rank">#10</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/zf3un7xojtyg1.jpeg?width=640&crop=smart&auto=webp&s=c9c500bcf50956405d7b94ae4416a58902514bc7" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Chekien</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/shitposting/comments/1t26rh8/chekien/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                </div>
         </section>
         
         <section class="sub-section">
             <h2 class="sub-title">r/TheRealJoke</h2>
-            <div class="meme-grid"></div>
+            <div class="meme-grid"><p style="color:#888;padding:1rem;">Nema podataka za danas.</p></div>
         </section>
         
         <section class="sub-section">
             <h2 class="sub-title">r/blursedimages</h2>
-            <div class="meme-grid"></div>
+            <div class="meme-grid">
+                <div class="meme-card" style="--i:1">
+                    <div class="rank">#1</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/nm8iuzbbpuyg1.jpeg?width=640&crop=smart&auto=webp&s=587242673e44b5a32c1986910dd776cd3ae64824" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed toys story</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2bkk2/blursed_toys_story/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:2">
+                    <div class="rank">#2</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/56olhlhlqyyg1.jpeg?width=320&crop=smart&auto=webp&s=7be644e86e01527362d7eeab2d139aaaaa076af2" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed surgeon</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2stz8/blursed_surgeon/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:3">
+                    <div class="rank">#3</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/nt2euorzjwyg1.jpeg?width=640&crop=smart&auto=webp&s=6fb8a07090168f8442f50aa7e24adf03176aebad" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed medicine</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2i5kx/blursed_medicine/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:4">
+                    <div class="rank">#4</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/jogjpjorizyg1.jpeg?width=640&crop=smart&auto=webp&s=31ba65703a135fa51f4241f60ba00816cb7bf883" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">blursed_groupproject</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2x2vo/blursed_groupproject/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:5">
+                    <div class="rank">#5</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/8hj2l8ympwyg1.jpeg?width=640&crop=smart&auto=webp&s=6272490b3297a85b08c064586efd10a8b06004a5" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed team rocket</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2iqzs/blursed_team_rocket/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:6">
+                    <div class="rank">#6</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/l1h3eh172wyg1.jpeg?width=320&crop=smart&auto=webp&s=dfcc7c17feb2a00ed0e6fc796f43c43824207f87" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed_coffee</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2gfvk/blursed_coffee/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:7">
+                    <div class="rank">#7</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/aidxirxcuuyg1.jpeg?width=640&crop=smart&auto=webp&s=36d62803a5c652ec8aa34db53cb677765763ed66" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed_meat</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2c3ai/blursed_meat/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:8">
+                    <div class="rank">#8</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/ssj3wtvvhzyg1.jpeg?width=640&crop=smart&auto=webp&s=052bf090183a754829da2c006bdca8d6f725728b" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">blursed van</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2x126/blursed_van/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:9">
+                    <div class="rank">#9</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/nbbdj4w9exyg1.jpeg?width=640&crop=smart&auto=webp&s=d92d7a1f37c8c51eaae966ec00c4d007c86384ed" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">Blursed sponge</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2lqrg/blursed_sponge/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
+                <div class="meme-card" style="--i:10">
+                    <div class="rank">#10</div>
+                    <div class="meme-img-wrap"><img src="https://preview.redd.it/qei4f9f15vyg1.jpeg?width=640&crop=smart&auto=webp&s=53793cdd4a5fb5a561af95066c59135195d84605" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></div>
+                    <div class="meme-info">
+                        <p class="meme-title">blursed hair</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t2h21k/blursed_hair/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                </div>
         </section>
-        
-</main>
+        </main>
 <footer>
   Generisano automatski iz r/shitposting, r/TheRealJoke, r/blursedimages<br>
-  Sortirano po: upvote-ovi × ratio | Poslednje ažuriranje: 04.05.2026 02:07
+  Sortirano po: upvote-ovi × ratio | Poslednje ažuriranje: 04.05.2026 02:19
 </footer>
 </body>
 </html>
