@@ -7,7 +7,7 @@ import pytz
 import re
 import time
 
-SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages"]
+SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "holesome", "retardedcornfieldcum", "ihaveihaveihavereddit"]
 TOP_N = 10
 
 HEADERS = {
@@ -17,7 +17,23 @@ HEADERS = {
 def get_upvote_ratio_score(post):
     ups = post.get("ups", 0)
     ratio = post.get("upvote_ratio", 0.5)
-    return ups * ratio
+    num_comments = post.get("num_comments", 0)
+    awards = post.get("total_awards_received", 0)
+
+    # Bazni score: upvote-ovi * ratio
+    base = ups * ratio
+
+    # Kriterijum 1: engagement (komentari po upvotu)
+    # Smesni postovi provociraju komentare - bonus ako je comment/ups ratio visok
+    engagement_bonus = 0
+    if ups > 0:
+        comment_ratio = num_comments / ups
+        engagement_bonus = comment_ratio * ups * 0.3  # 30% tezine
+
+    # Kriterijum 3: awards (ljudi trose novac da nagrade smesne postove)
+    awards_bonus = awards * 500
+
+    return base + engagement_bonus + awards_bonus
 
 def extract_image_from_html(html_content):
     """Izvuci URL slike iz Reddit HTML opisa posta"""
@@ -155,6 +171,7 @@ def fetch_top_memes(subreddit):
                 "reddit_url": f"https://www.reddit.com{p.get('permalink', '')}",
                 "author": p.get("author", ""),
                 "num_comments": p.get("num_comments", 0),
+                "awards": p.get("total_awards_received", 0),
                 "subreddit": subreddit,
             })
         
@@ -194,6 +211,10 @@ def generate_html(all_memes_by_sub, generated_at):
                 else:
                     img_tag = '<div class="no-img">🖼️</div>'
 
+                awards = m.get("awards", 0)
+                awards_badge = f'<span class="stat awards">🏆 {awards}</span>' if awards > 0 else ""
+                num_comments = m["num_comments"]
+
                 cards_html += f"""
                 <div class="meme-card" style="--i:{i}">
                     <div class="rank">#{i}</div>
@@ -203,7 +224,8 @@ def generate_html(all_memes_by_sub, generated_at):
                         <div class="meme-stats">
                             <span class="stat ups">▲ {ups_fmt}</span>
                             <span class="stat ratio">💯 {ratio_pct}%</span>
-                            <span class="stat comments">💬 {m['num_comments']}</span>
+                            <span class="stat comments">💬 {num_comments}</span>
+                            {awards_badge}
                         </div>
                         <a href="{m['reddit_url']}" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
                     </div>
