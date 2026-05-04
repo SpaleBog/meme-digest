@@ -94,14 +94,20 @@ def generate_html(all_memes_by_sub, generated_at):
             if not any(img_src.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
                 img_src = m["thumbnail"] if m["thumbnail"].startswith("http") else ""
 
+            title_short = m['title'][:120] + ('...' if len(m['title']) > 120 else '')
+            if img_src:
+                img_tag = '<img src="' + img_src + '" alt="meme" loading="lazy" onerror="this.style.display=\'none\'"/>'
+            else:
+                img_tag = '<div class="no-img">🖼️</div>'
+
             cards_html += f"""
             <div class="meme-card" style="--i:{i}">
                 <div class="rank">#{i}</div>
                 <div class="meme-img-wrap">
-                    {"f'<img src=\"{img_src}\" alt=\"meme\" loading=\"lazy\" onerror=\"this.style.display=\\'none\\'\"/>' if img_src else '<div class=\"no-img\">🖼️</div>"}
+                    {img_tag}
                 </div>
                 <div class="meme-info">
-                    <p class="meme-title">{m['title'][:120]}{'...' if len(m['title']) > 120 else ''}</p>
+                    <p class="meme-title">{title_short}</p>
                     <div class="meme-stats">
                         <span class="stat ups">▲ {ups_fmt}</span>
                         <span class="stat ratio">💯 {ratio_pct}%</span>
