@@ -45,12 +45,12 @@ def fetch_top_memes_json(subreddit, limit=50):
         print(f"    JSON greška: {e}")
         return None
 
-def fetch_top_memes_rss(subreddit):
-    """Fallback na RSS feed"""
-    url = f"https://www.reddit.com/r/{subreddit}/top.rss?t=day&limit=50"
+def fetch_top_memes_rss(subreddit, period="day"):
+    """Fallback na RSS feed, sa automatskim prelaskom na sedmicu ako nema dnevnih"""
+    url = f"https://www.reddit.com/r/{subreddit}/top.rss?t={period}&limit=50"
     try:
         response = requests.get(url, headers=HEADERS, timeout=20)
-        print(f"    RSS status: {response.status_code}")
+        print(f"    RSS status: {response.status_code} (period={period})")
         if response.status_code != 200:
             return []
         
@@ -58,6 +58,10 @@ def fetch_top_memes_rss(subreddit):
         ns = {"atom": "http://www.w3.org/2005/Atom"}
         entries = root.findall("atom:entry", ns)
         print(f"    RSS vratio {len(entries)} unosa")
+
+        if len(entries) == 0 and period == "day":
+            print(f"    Nema dnevnih postova, probam sedmicu...")
+            return fetch_top_memes_rss(subreddit, period="week")
         
         memes = []
         for entry in entries:
