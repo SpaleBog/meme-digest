@@ -206,8 +206,9 @@ def generate_html(all_memes_by_sub, generated_at):
 
                 title_short = m["title"][:120] + ("..." if len(m["title"]) > 120 else "")
 
+                reddit_url = m["reddit_url"]
                 if img_src and img_src.startswith("http"):
-                    img_tag = '<img src="' + img_src + '" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=no-img>🖼️</div>\'"/>'
+                    img_tag = '<a href="' + reddit_url + '" target="_blank" style="display:block;height:100%"><img src="' + img_src + '" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=no-img>🖼️</div>\'"/></a>'
                 else:
                     img_tag = '<div class="no-img">🖼️</div>'
 
@@ -248,6 +249,7 @@ def generate_html(all_memes_by_sub, generated_at):
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="0"/>
 <title>Dnevni Meme Digest – {date_str}</title>
+<meta name="generated" content="{date_str}-{time_str}"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -434,6 +436,20 @@ def generate_html(all_memes_by_sub, generated_at):
     nav.appendChild(btn);
     if (idx === 0) sec.classList.add('active');
   }});
+</script>
+<script>
+  (function() {{
+    var meta = document.querySelector('meta[name="generated"]');
+    if (!meta) return;
+    var current = meta.getAttribute('content');
+    var stored = sessionStorage.getItem('meme_version');
+    if (stored && stored !== current) {{
+      sessionStorage.setItem('meme_version', current);
+      window.location.href = window.location.href.split('?')[0] + '?v=' + current.replace(/[^a-zA-Z0-9]/g, '');
+    }} else {{
+      sessionStorage.setItem('meme_version', current);
+    }}
+  }})();
 </script>
 </body>
 </html>"""
