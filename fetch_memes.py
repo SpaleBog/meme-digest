@@ -7,7 +7,7 @@ import pytz
 import re
 import time
 
-SUBREDDITS = ["shitposting", "TheRealJoke", "blursedimages"]
+SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages"]
 TOP_N = 10
 
 HEADERS = {
@@ -59,9 +59,7 @@ def fetch_top_memes_rss(subreddit, period="day"):
         entries = root.findall("atom:entry", ns)
         print(f"    RSS vratio {len(entries)} unosa")
 
-        if len(entries) == 0 and period == "day":
-            print(f"    Nema dnevnih postova, probam sedmicu...")
-            return fetch_top_memes_rss(subreddit, period="week")
+
         
         memes = []
         for entry in entries:
@@ -321,7 +319,7 @@ def generate_html(all_memes_by_sub, generated_at):
 </header>
 <main>{sections_html}</main>
 <footer>
-  Generisano automatski iz r/shitposting, r/TheRealJoke, r/blursedimages<br>
+  Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages<br>
   Sortirano po: upvote-ovi × ratio | Poslednje ažuriranje: {date_str} {time_str}
 </footer>
 </body>
