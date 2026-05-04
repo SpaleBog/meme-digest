@@ -497,6 +497,10 @@ def main():
     with open("docs/memes.json", "w", encoding="utf-8") as f:
         json.dump({"generated_at": now, "data": all_memes}, f, ensure_ascii=False, indent=2)
 
+    # Cloudflare headers - iskljuci kesiranje
+    with open("docs/_headers", "w", encoding="utf-8") as f:
+        f.write("/\n  Cache-Control: no-cache, no-store, must-revalidate\n  Pragma: no-cache\n  Expires: 0\n\n/index.html\n  Cache-Control: no-cache, no-store, must-revalidate\n  Pragma: no-cache\n  Expires: 0\n")
+
     total = sum(len(v) for v in all_memes.values())
     print(f"✅ Gotovo! {total} memova ukupno. docs/index.html generisan.")
 
