@@ -439,16 +439,37 @@ def generate_html(all_memes_by_sub, generated_at):
 </script>
 <script>
   (function() {{
+    // Sacuvaj trenutnu verziju
     var meta = document.querySelector('meta[name="generated"]');
     if (!meta) return;
     var current = meta.getAttribute('content');
     var stored = sessionStorage.getItem('meme_version');
+
+    // Ako je verzija drugacija od zapamcene, osvezi
     if (stored && stored !== current) {{
       sessionStorage.setItem('meme_version', current);
       window.location.href = window.location.href.split('?')[0] + '?v=' + current.replace(/[^a-zA-Z0-9]/g, '');
     }} else {{
       sessionStorage.setItem('meme_version', current);
     }}
+
+    // Svakih 5 minuta fetchuj stranicu u pozadini i proveri da li ima nova verzija
+    setInterval(function() {{
+      fetch(window.location.href.split('?')[0] + '?check=' + Date.now(), {{cache: 'no-store'}})
+        .then(function(r) {{ return r.text(); }})
+        .then(function(html) {{
+          var match = html.match(/name="generated" content="([^"]+)"/);
+          if (match) {{
+            var latest = match[1];
+            var saved = sessionStorage.getItem('meme_version');
+            if (saved && latest !== saved) {{
+              sessionStorage.setItem('meme_version', latest);
+              window.location.reload(true);
+            }}
+          }}
+        }})
+        .catch(function() {{}});
+    }}, 5 * 60 * 1000); // 5 minuta
   }})();
 </script>
 </body>
