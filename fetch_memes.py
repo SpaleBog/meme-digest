@@ -45,31 +45,14 @@ def extract_image_from_html(html_content):
             return url
     return ""
 
-def fetch_with_retry(url, retries=3, wait=5):
-    """Fetch sa retry logikom za 500/429 greske"""
-    for attempt in range(retries):
-        try:
-            response = requests.get(url, headers=HEADERS, timeout=20)
-            if response.status_code in (500, 429, 503):
-                print(f"    Status {response.status_code}, cekam {wait}s pa probam ponovo ({attempt+1}/{retries})...")
-                time.sleep(wait)
-                continue
-            return response
-        except Exception as e:
-            print(f"    Greska: {e}, pokusaj {attempt+1}/{retries}")
-            time.sleep(wait)
-    return None
-
 def fetch_top_memes_json(subreddit, limit=50):
     """Pokušaj sa JSON API"""
     url = f"https://www.reddit.com/r/{subreddit}/top.json?t=day&limit={limit}&raw_json=1"
-    response = fetch_with_retry(url)
-    if not response:
-        return None
-    print(f"    JSON status: {response.status_code}")
-    if response.status_code != 200:
-        return None
     try:
+        response = requests.get(url, headers=HEADERS, timeout=20)
+        print(f"    JSON status: {response.status_code}")
+        if response.status_code != 200:
+            return None
         data = response.json()
         posts = data["data"]["children"]
         print(f"    JSON vratio {len(posts)} postova")
@@ -82,9 +65,7 @@ def fetch_top_memes_rss(subreddit, period="day"):
     """Fallback na RSS feed, sa automatskim prelaskom na sedmicu ako nema dnevnih"""
     url = f"https://www.reddit.com/r/{subreddit}/top.rss?t={period}&limit=50"
     try:
-        response = fetch_with_retry(url)
-        if not response:
-            return []
+        response = requests.get(url, headers=HEADERS, timeout=20)
         print(f"    RSS status: {response.status_code} (period={period})")
         if response.status_code != 200:
             return []
@@ -393,13 +374,11 @@ def generate_html(all_memes_by_sub, generated_at):
     letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0;
   }}
   .meme-img-wrap {{
-    width: 100%;
+    width: 100%; aspect-ratio: 1/1;
     background: var(--surface2);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
-    min-height: 180px;
-    max-height: 500px;
   }}
-  .meme-img-wrap img {{ width: 100%; height: auto; object-fit: contain; display: block; }}
+  .meme-img-wrap img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
   .no-img {{ font-size: 3rem; opacity: 0.3; }}
   .meme-info {{ padding: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }}
   .meme-title {{ font-size: 0.85rem; line-height: 1.4; color: var(--text); }}
@@ -418,7 +397,6 @@ def generate_html(all_memes_by_sub, generated_at):
     transition: background 0.15s;
   }}
   .view-btn:hover {{ background: var(--accent2); }}
-
 
   /* ===== FOOTER ===== */
   footer {{ text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }}
@@ -461,42 +439,37 @@ def generate_html(all_memes_by_sub, generated_at):
 </script>
 <script>
   (function() {{
+    // Sacuvaj trenutnu verziju
     var meta = document.querySelector('meta[name="generated"]');
     if (!meta) return;
     var current = meta.getAttribute('content');
+    var stored = sessionStorage.getItem('meme_version');
 
-    // Koristi localStorage da pamti verziju izmedju sesija (za bookmark slucaj)
-    try {{
-      var stored = localStorage.getItem('meme_version');
-      if (stored && stored !== current) {{
-        localStorage.setItem('meme_version', current);
-        // Force reload bez kesa
-        window.location.replace(window.location.href.split('?')[0] + '?v=' + Date.now());
-        return;
-      }}
-      localStorage.setItem('meme_version', current);
-    }} catch(e) {{}}
+    // Ako je verzija drugacija od zapamcene, osvezi
+    if (stored && stored !== current) {{
+      sessionStorage.setItem('meme_version', current);
+      window.location.href = window.location.href.split('?')[0] + '?v=' + current.replace(/[^a-zA-Z0-9]/g, '');
+    }} else {{
+      sessionStorage.setItem('meme_version', current);
+    }}
 
-    // Svakih 3 minuta proveri da li ima novija verzija
+    // Svakih 5 minuta fetchuj stranicu u pozadini i proveri da li ima nova verzija
     setInterval(function() {{
-      var bustUrl = window.location.href.split('?')[0] + '?nc=' + Date.now();
-      fetch(bustUrl, {{cache: 'no-store', headers: {{'Cache-Control': 'no-cache'}}}})
+      fetch(window.location.href.split('?')[0] + '?check=' + Date.now(), {{cache: 'no-store'}})
         .then(function(r) {{ return r.text(); }})
         .then(function(html) {{
           var match = html.match(/name="generated" content="([^"]+)"/);
           if (match) {{
             var latest = match[1];
-            try {{
-              var saved = localStorage.getItem('meme_version');
-              if (saved && latest !== saved) {{
-                localStorage.setItem('meme_version', latest);
-                window.location.replace(window.location.href.split('?')[0] + '?v=' + Date.now());
-              }}
-            }} catch(e) {{}}
+            var saved = sessionStorage.getItem('meme_version');
+            if (saved && latest !== saved) {{
+              sessionStorage.setItem('meme_version', latest);
+              window.location.reload(true);
+            }}
           }}
         }})
         .catch(function() {{}});
-    }}, 3 * 60 * 1000); // 3 minuta
+    }}, 5 * 60 * 1000); // 5 minuta
   }})();
 </script>
 </body>
@@ -521,10 +494,6 @@ def main():
         f.write(html)
     with open("docs/memes.json", "w", encoding="utf-8") as f:
         json.dump({"generated_at": now, "data": all_memes}, f, ensure_ascii=False, indent=2)
-
-    # Cloudflare headers - iskljuci kesiranje
-    with open("docs/_headers", "w", encoding="utf-8") as f:
-        f.write("/\n  Cache-Control: no-cache, no-store, must-revalidate\n  Pragma: no-cache\n  Expires: 0\n\n/index.html\n  Cache-Control: no-cache, no-store, must-revalidate\n  Pragma: no-cache\n  Expires: 0\n")
 
     total = sum(len(v) for v in all_memes.values())
     print(f"✅ Gotovo! {total} memova ukupno. docs/index.html generisan.")
