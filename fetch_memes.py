@@ -45,29 +45,6 @@ def extract_image_from_html(html_content):
             return url
     return ""
 
-def fetch_top_comment(permalink):
-    """Povuci najsmesniji top komentar sa Reddit posta"""
-    try:
-        url = f"https://www.reddit.com{permalink}.json?limit=10&sort=top&raw_json=1"
-        response = requests.get(url, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            return ""
-        data = response.json()
-        comments = data[1]["data"]["children"]
-        for c in comments:
-            if c["kind"] != "t1":
-                continue
-            body = c["data"].get("body", "").strip()
-            # Preskoci kratke, izbrisane ili bot komentare
-            if len(body) < 5 or body in ("[deleted]", "[removed]"):
-                continue
-            if len(body) > 280:
-                body = body[:277] + "..."
-            return body
-    except:
-        pass
-    return ""
-
 def fetch_with_retry(url, retries=3, wait=5):
     """Fetch sa retry logikom za 500/429 greske"""
     for attempt in range(retries):
@@ -211,21 +188,14 @@ def fetch_top_memes(subreddit):
                 "url": final_image,
                 "thumbnail": thumbnail,
                 "reddit_url": f"https://www.reddit.com{p.get('permalink', '')}",
-                "permalink": p.get("permalink", ""),
                 "author": p.get("author", ""),
                 "num_comments": p.get("num_comments", 0),
                 "awards": p.get("total_awards_received", 0),
                 "subreddit": subreddit,
-                "top_comment": "",
             })
         
         memes.sort(key=lambda x: x["score"], reverse=True)
         result = memes[:TOP_N]
-        print(f"     Fetchujem komentare...")
-        for m in result:
-            if m.get("permalink"):
-                m["top_comment"] = fetch_top_comment(m["permalink"])
-                time.sleep(0.5)
         print(f"     ✅ {len(result)} memova (JSON)")
         return result
     
@@ -277,7 +247,6 @@ def generate_html(all_memes_by_sub, generated_at):
                             <span class="stat comments">💬 {num_comments}</span>
                             {awards_badge}
                         </div>
-                        {f'<div class="top-comment">{m["top_comment"]}</div>' if m.get("top_comment") else ""}
                         <a href="{m['reddit_url']}" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
                     </div>
                 </div>
@@ -449,26 +418,7 @@ def generate_html(all_memes_by_sub, generated_at):
     transition: background 0.15s;
   }}
   .view-btn:hover {{ background: var(--accent2); }}
-  .top-comment {{
-    background: var(--surface2);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 8px 8px 0;
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.5;
-    font-style: italic;
-  }}
-  .top-comment::before {{
-    content: "💬 Top komentar";
-    display: block;
-    font-style: normal;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.05em;
-  }}
+
 
   /* ===== FOOTER ===== */
   footer {{ text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }}
