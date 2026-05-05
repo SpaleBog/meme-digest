@@ -68,14 +68,31 @@ def fetch_top_comment(permalink):
         pass
     return ""
 
+def fetch_with_retry(url, retries=3, wait=5):
+    """Fetch sa retry logikom za 500/429 greske"""
+    for attempt in range(retries):
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=20)
+            if response.status_code in (500, 429, 503):
+                print(f"    Status {response.status_code}, cekam {wait}s pa probam ponovo ({attempt+1}/{retries})...")
+                time.sleep(wait)
+                continue
+            return response
+        except Exception as e:
+            print(f"    Greska: {e}, pokusaj {attempt+1}/{retries}")
+            time.sleep(wait)
+    return None
+
 def fetch_top_memes_json(subreddit, limit=50):
     """Pokušaj sa JSON API"""
     url = f"https://www.reddit.com/r/{subreddit}/top.json?t=day&limit={limit}&raw_json=1"
+    response = fetch_with_retry(url)
+    if not response:
+        return None
+    print(f"    JSON status: {response.status_code}")
+    if response.status_code != 200:
+        return None
     try:
-        response = requests.get(url, headers=HEADERS, timeout=20)
-        print(f"    JSON status: {response.status_code}")
-        if response.status_code != 200:
-            return None
         data = response.json()
         posts = data["data"]["children"]
         print(f"    JSON vratio {len(posts)} postova")
@@ -88,7 +105,9 @@ def fetch_top_memes_rss(subreddit, period="day"):
     """Fallback na RSS feed, sa automatskim prelaskom na sedmicu ako nema dnevnih"""
     url = f"https://www.reddit.com/r/{subreddit}/top.rss?t={period}&limit=50"
     try:
-        response = requests.get(url, headers=HEADERS, timeout=20)
+        response = fetch_with_retry(url)
+        if not response:
+            return []
         print(f"    RSS status: {response.status_code} (period={period})")
         if response.status_code != 200:
             return []
@@ -492,37 +511,42 @@ def generate_html(all_memes_by_sub, generated_at):
 </script>
 <script>
   (function() {{
-    // Sacuvaj trenutnu verziju
     var meta = document.querySelector('meta[name="generated"]');
     if (!meta) return;
     var current = meta.getAttribute('content');
-    var stored = sessionStorage.getItem('meme_version');
 
-    // Ako je verzija drugacija od zapamcene, osvezi
-    if (stored && stored !== current) {{
-      sessionStorage.setItem('meme_version', current);
-      window.location.href = window.location.href.split('?')[0] + '?v=' + current.replace(/[^a-zA-Z0-9]/g, '');
-    }} else {{
-      sessionStorage.setItem('meme_version', current);
-    }}
+    // Koristi localStorage da pamti verziju izmedju sesija (za bookmark slucaj)
+    try {{
+      var stored = localStorage.getItem('meme_version');
+      if (stored && stored !== current) {{
+        localStorage.setItem('meme_version', current);
+        // Force reload bez kesa
+        window.location.replace(window.location.href.split('?')[0] + '?v=' + Date.now());
+        return;
+      }}
+      localStorage.setItem('meme_version', current);
+    }} catch(e) {{}}
 
-    // Svakih 5 minuta fetchuj stranicu u pozadini i proveri da li ima nova verzija
+    // Svakih 3 minuta proveri da li ima novija verzija
     setInterval(function() {{
-      fetch(window.location.href.split('?')[0] + '?check=' + Date.now(), {{cache: 'no-store'}})
+      var bustUrl = window.location.href.split('?')[0] + '?nc=' + Date.now();
+      fetch(bustUrl, {{cache: 'no-store', headers: {{'Cache-Control': 'no-cache'}}}})
         .then(function(r) {{ return r.text(); }})
         .then(function(html) {{
           var match = html.match(/name="generated" content="([^"]+)"/);
           if (match) {{
             var latest = match[1];
-            var saved = sessionStorage.getItem('meme_version');
-            if (saved && latest !== saved) {{
-              sessionStorage.setItem('meme_version', latest);
-              window.location.reload(true);
-            }}
+            try {{
+              var saved = localStorage.getItem('meme_version');
+              if (saved && latest !== saved) {{
+                localStorage.setItem('meme_version', latest);
+                window.location.replace(window.location.href.split('?')[0] + '?v=' + Date.now());
+              }}
+            }} catch(e) {{}}
           }}
         }})
         .catch(function() {{}});
-    }}, 5 * 60 * 1000); // 5 minuta
+    }}, 3 * 60 * 1000); // 3 minuta
   }})();
 </script>
 </body>
