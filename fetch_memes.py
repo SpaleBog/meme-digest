@@ -374,11 +374,11 @@ def generate_html(all_memes_by_sub, generated_at):
     letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0;
   }}
   .meme-img-wrap {{
-    width: 100%; aspect-ratio: 1/1;
+    
     background: var(--surface2);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }}
-  .meme-img-wrap img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+  .meme-img-wrap img {{ width: 100%; height: 100%; object-fit: contain; display: block; }}
   .no-img {{ font-size: 3rem; opacity: 0.3; }}
   .meme-info {{ padding: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }}
   .meme-title {{ font-size: 0.85rem; line-height: 1.4; color: var(--text); }}
