@@ -316,18 +316,18 @@ def generate_html(all_memes_by_sub, generated_at):
   .meme-img-wrap a {{ display: block; width: 100%; }}
   .meme-img-wrap img {{ width: 100%; height: auto; object-fit: contain; display: block; }}
   .no-img {{ font-size: 3rem; opacity: 0.3; padding: 2rem; }}
-  .meme-info {{ padding: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }}
-  .meme-title {{ font-size: 0.85rem; line-height: 1.4; color: var(--text); }}
-  .meme-stats {{ display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: auto; padding-top: 0.3rem; }}
+  .meme-info {{ padding: 1rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }}
+  .meme-title {{ font-size: 1rem; line-height: 1.45; color: var(--text); font-weight: 600; }}
+  .meme-stats {{ display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: auto; padding-top: 0.4rem; }}
   .stat {{
-    font-size: 0.74rem; background: var(--surface2);
-    border-radius: 6px; padding: 0.2rem 0.5rem; color: var(--muted); font-weight: 500;
+    font-size: 0.78rem; background: var(--surface2);
+    border-radius: 6px; padding: 0.25rem 0.6rem; color: var(--muted); font-weight: 500;
   }}
   .stat.ups {{ color: var(--accent2); }}
   .view-btn {{
-    display: block; text-align: center; font-size: 0.8rem; font-weight: 700;
+    display: block; text-align: center; font-size: 0.85rem; font-weight: 700;
     color: white; background: var(--accent); text-decoration: none;
-    border-radius: 8px; padding: 0.5rem; margin-top: 0.5rem; transition: background 0.15s;
+    border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; transition: background 0.15s;
   }}
   .view-btn:hover {{ background: var(--accent2); }}
   footer {{ text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }}
