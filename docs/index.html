@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
 <title>Dnevni Meme Digest – 06.05.2026</title>
-<meta name="generated" content="06.05.2026-11:38"/>
+<meta name="generated" content="202605061149"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -30,8 +27,6 @@
     min-height: 100vh;
     background-image: radial-gradient(ellipse 80% 40% at 50% -10%, rgba(255,69,0,0.12) 0%, transparent 60%);
   }
-
-  /* ===== HEADER ===== */
   header { text-align: center; padding: 2rem 1rem 1.5rem; border-bottom: 1px solid var(--border); }
   .logo {
     font-family: 'Bebas Neue', sans-serif;
@@ -50,43 +45,22 @@
     border-radius: 99px; padding: 0.3rem 1rem;
     font-size: 0.82rem; color: var(--accent2); font-weight: 500;
   }
-
-  /* ===== NAV TABS (mobile subreddit switcher) ===== */
   .sub-nav {
-    display: flex;
-    overflow-x: auto;
-    gap: 0.5rem;
-    padding: 1rem 1rem 0;
-    max-width: 1100px;
-    margin: 0 auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: flex; overflow-x: auto; gap: 0.5rem;
+    padding: 1rem 1rem 0; max-width: 1100px; margin: 0 auto;
+    scrollbar-width: none; -ms-overflow-style: none;
   }
   .sub-nav::-webkit-scrollbar { display: none; }
   .sub-tab {
-    flex-shrink: 0;
-    padding: 0.45rem 1rem;
-    border-radius: 99px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--muted);
-    font-size: 0.82rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+    flex-shrink: 0; padding: 0.45rem 1rem; border-radius: 99px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--muted); font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
   }
-  .sub-tab.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-  }
-
-  /* ===== MAIN ===== */
+  .sub-tab.active { background: var(--accent); border-color: var(--accent); color: white; }
   main { max-width: 1100px; margin: 0 auto; padding: 1.2rem 1rem 4rem; }
   .sub-section { display: none; }
   .sub-section.active { display: block; }
-
   .sub-title {
     font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;
     letter-spacing: 0.08em; color: var(--accent); margin-bottom: 1rem;
@@ -96,48 +70,35 @@
     content: ''; flex: 1; height: 1px;
     background: linear-gradient(to right, var(--border), transparent); margin-left: 0.5rem;
   }
-
-  /* ===== GRID ===== */
-  /* Desktop: 3 kolone, Tablet: 2, Mobile: 1 */
   .meme-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   }
-  @media (max-width: 900px) {
-    .meme-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 560px) {
-    .meme-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ===== CARDS ===== */
+  @media (max-width: 900px) { .meme-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .meme-grid { grid-template-columns: 1fr; } }
   .meme-card {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: var(--radius); overflow: hidden;
     transition: transform 0.2s ease, border-color 0.2s ease;
     animation: fadeUp 0.35s ease both;
     animation-delay: calc(var(--i) * 0.04s);
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
   }
   .meme-card:hover { transform: translateY(-3px); border-color: var(--accent); }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
   .rank {
     font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem;
     letter-spacing: 0.1em; color: var(--accent); padding: 0.5rem 0.8rem 0;
   }
   .meme-img-wrap {
-    
-    background: var(--surface2);
+    width: 100%; background: var(--surface2);
     display: flex; align-items: center; justify-content: center; overflow: hidden;
   }
-  .meme-img-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; }
-  .no-img { font-size: 3rem; opacity: 0.3; }
+  .meme-img-wrap a { display: block; width: 100%; }
+  .meme-img-wrap img { width: 100%; height: auto; object-fit: contain; display: block; }
+  .no-img { font-size: 3rem; opacity: 0.3; padding: 2rem; }
   .meme-info { padding: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
   .meme-title { font-size: 0.85rem; line-height: 1.4; color: var(--text); }
   .meme-stats { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: auto; padding-top: 0.3rem; }
@@ -147,16 +108,11 @@
   }
   .stat.ups { color: var(--accent2); }
   .view-btn {
-    display: block; text-align: center;
-    font-size: 0.8rem; font-weight: 700;
-    color: white; background: var(--accent);
-    text-decoration: none; border-radius: 8px;
-    padding: 0.5rem; margin-top: 0.5rem;
-    transition: background 0.15s;
+    display: block; text-align: center; font-size: 0.8rem; font-weight: 700;
+    color: white; background: var(--accent); text-decoration: none;
+    border-radius: 8px; padding: 0.5rem; margin-top: 0.5rem; transition: background 0.15s;
   }
   .view-btn:hover { background: var(--accent2); }
-
-  /* ===== FOOTER ===== */
   footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }
 </style>
 </head>
@@ -164,9 +120,8 @@
 <header>
   <div class="logo">🔥 Meme Digest</div>
   <p class="tagline">Najbolji mimovi dana • Automatski sakupljeno</p>
-  <span class="date-badge">📅 06.05.2026 u 11:38 CET</span>
+  <span class="date-badge">📅 06.05.2026 u 11:49 CET</span>
 </header>
-
 <nav class="sub-nav" id="subNav"></nav>
 <main id="mainContent">
         <section class="sub-section" data-sub="shitposting">
@@ -174,7 +129,7 @@
             <div class="meme-grid">
                 <div class="meme-card" style="--i:1">
                     <div class="rank">#1</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4d3f8/genuinely_how/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/mspr5eth4bzg1.png?width=320&crop=smart&auto=webp&s=4668c841f6c52228785a2959ea75949909016861" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4d3f8/genuinely_how/" target="_blank" style="display:block"><img src="https://preview.redd.it/mspr5eth4bzg1.png?width=320&crop=smart&auto=webp&s=4668c841f6c52228785a2959ea75949909016861" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Genuinely how??</p>
                         <div class="meme-stats">
@@ -189,7 +144,7 @@
                 
                 <div class="meme-card" style="--i:2">
                     <div class="rank">#2</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4hyth/ling/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/u5ec009j2czg1.jpeg?width=640&crop=smart&auto=webp&s=f962cdb1b8e07b1ff532811271c2a3334488b575" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4hyth/ling/" target="_blank" style="display:block"><img src="https://preview.redd.it/u5ec009j2czg1.jpeg?width=640&crop=smart&auto=webp&s=f962cdb1b8e07b1ff532811271c2a3334488b575" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Ling</p>
                         <div class="meme-stats">
@@ -204,7 +159,7 @@
                 
                 <div class="meme-card" style="--i:3">
                     <div class="rank">#3</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4ub1d/why_is_he_not_scrooge_mcfuck/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/65uin6vn8ezg1.jpeg?width=640&crop=smart&auto=webp&s=741d59d7c18f0b6bae74505eefa303ad07180069" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4ub1d/why_is_he_not_scrooge_mcfuck/" target="_blank" style="display:block"><img src="https://preview.redd.it/65uin6vn8ezg1.jpeg?width=640&crop=smart&auto=webp&s=741d59d7c18f0b6bae74505eefa303ad07180069" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Why is he not scrooge mcfuck</p>
                         <div class="meme-stats">
@@ -219,7 +174,7 @@
                 
                 <div class="meme-card" style="--i:4">
                     <div class="rank">#4</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4kmce/_/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/39w6ljk4jczg1.jpeg?width=640&crop=smart&auto=webp&s=f745d36f11d0a7f66f6aa4b89c62d68c29da2218" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4kmce/_/" target="_blank" style="display:block"><img src="https://preview.redd.it/39w6ljk4jczg1.jpeg?width=640&crop=smart&auto=webp&s=f745d36f11d0a7f66f6aa4b89c62d68c29da2218" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">📡📡📡</p>
                         <div class="meme-stats">
@@ -234,7 +189,7 @@
                 
                 <div class="meme-card" style="--i:5">
                     <div class="rank">#5</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4wvfh/wait_what/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/7f0bay9trezg1.png?width=320&crop=smart&auto=webp&s=c7c971acdc61f0836bc3fbc15561fb3ad5801d2a" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4wvfh/wait_what/" target="_blank" style="display:block"><img src="https://preview.redd.it/7f0bay9trezg1.png?width=320&crop=smart&auto=webp&s=c7c971acdc61f0836bc3fbc15561fb3ad5801d2a" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Wait what</p>
                         <div class="meme-stats">
@@ -249,7 +204,7 @@
                 
                 <div class="meme-card" style="--i:6">
                     <div class="rank">#6</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4kmwk/_/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/zqaigtv7jczg1.jpeg?width=640&crop=smart&auto=webp&s=608eb128d46be2f75088d167508e6a6f1033868c" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4kmwk/_/" target="_blank" style="display:block"><img src="https://preview.redd.it/zqaigtv7jczg1.jpeg?width=640&crop=smart&auto=webp&s=608eb128d46be2f75088d167508e6a6f1033868c" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">🪚🪚🪚</p>
                         <div class="meme-stats">
@@ -264,7 +219,7 @@
                 
                 <div class="meme-card" style="--i:7">
                     <div class="rank">#7</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t54fpk/bro_discovered_public_embarrassment_the_hard_way/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/f10s63xmkgzg1.jpeg?width=320&crop=smart&auto=webp&s=0eebdfb9934274b461e1faed8f2ffa755870b165" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t54fpk/bro_discovered_public_embarrassment_the_hard_way/" target="_blank" style="display:block"><img src="https://preview.redd.it/f10s63xmkgzg1.jpeg?width=320&crop=smart&auto=webp&s=0eebdfb9934274b461e1faed8f2ffa755870b165" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Bro discovered public embarrassment the hard way</p>
                         <div class="meme-stats">
@@ -279,7 +234,7 @@
                 
                 <div class="meme-card" style="--i:8">
                     <div class="rank">#8</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t5226w/whos_gonna_tell_her/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/vfepbdv6yfzg1.jpeg?width=640&crop=smart&auto=webp&s=2070cf2f91286d5fd4384c62fc21448407e3a646" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t5226w/whos_gonna_tell_her/" target="_blank" style="display:block"><img src="https://preview.redd.it/vfepbdv6yfzg1.jpeg?width=640&crop=smart&auto=webp&s=2070cf2f91286d5fd4384c62fc21448407e3a646" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Who's gonna tell her....💀</p>
                         <div class="meme-stats">
@@ -294,7 +249,7 @@
                 
                 <div class="meme-card" style="--i:9">
                     <div class="rank">#9</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t53flt/bet/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/mdvfb23xagzg1.png?width=320&crop=smart&auto=webp&s=be6245994863a7a859b841b5e786ed6ba671c913" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t53flt/bet/" target="_blank" style="display:block"><img src="https://preview.redd.it/mdvfb23xagzg1.png?width=320&crop=smart&auto=webp&s=be6245994863a7a859b841b5e786ed6ba671c913" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Bet</p>
                         <div class="meme-stats">
@@ -309,7 +264,7 @@
                 
                 <div class="meme-card" style="--i:10">
                     <div class="rank">#10</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4hc7n/he_was_shattered_into_1987_different_pieces/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/7gqmgfodybzg1.png?width=320&crop=smart&auto=webp&s=607e792b388f2e11714e8319f737b182bb6ba02a" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/shitposting/comments/1t4hc7n/he_was_shattered_into_1987_different_pieces/" target="_blank" style="display:block"><img src="https://preview.redd.it/7gqmgfodybzg1.png?width=320&crop=smart&auto=webp&s=607e792b388f2e11714e8319f737b182bb6ba02a" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">he was shattered into 1987 different pieces</p>
                         <div class="meme-stats">
@@ -329,7 +284,7 @@
             <div class="meme-grid">
                 <div class="meme-card" style="--i:1">
                     <div class="rank">#1</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4yy0g/why_does_it_curv_left/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/ufed171j8fzg1.jpeg?width=640&crop=smart&auto=webp&s=dbdc1e80bef25db23340442aa306c3c1896531cd" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4yy0g/why_does_it_curv_left/" target="_blank" style="display:block"><img src="https://preview.redd.it/ufed171j8fzg1.jpeg?width=640&crop=smart&auto=webp&s=dbdc1e80bef25db23340442aa306c3c1896531cd" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">why does it curv left 🤨🤨🤨🤨</p>
                         <div class="meme-stats">
@@ -344,7 +299,7 @@
                 
                 <div class="meme-card" style="--i:2">
                     <div class="rank">#2</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4hjqx/im_want_to_be_a_child_soldier_but_i_grew_sad/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/iauunk8vzbzg1.jpeg?width=640&crop=smart&auto=webp&s=cd8f756145be873fb5eaebf5faaf36c2cf6d41f7" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4hjqx/im_want_to_be_a_child_soldier_but_i_grew_sad/" target="_blank" style="display:block"><img src="https://preview.redd.it/iauunk8vzbzg1.jpeg?width=640&crop=smart&auto=webp&s=cd8f756145be873fb5eaebf5faaf36c2cf6d41f7" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Im want to be a child soldier but I grew, sad</p>
                         <div class="meme-stats">
@@ -359,7 +314,7 @@
                 
                 <div class="meme-card" style="--i:3">
                     <div class="rank">#3</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4jahg/cum/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/lp2f20poaczg1.png?width=320&crop=smart&auto=webp&s=f767689fe109b85106f98213382caea7f0296074" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4jahg/cum/" target="_blank" style="display:block"><img src="https://preview.redd.it/lp2f20poaczg1.png?width=320&crop=smart&auto=webp&s=f767689fe109b85106f98213382caea7f0296074" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">C.U.M 😃</p>
                         <div class="meme-stats">
@@ -374,7 +329,7 @@
                 
                 <div class="meme-card" style="--i:4">
                     <div class="rank">#4</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4hf9x/your_dumb/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/l6ikjdq0zbzg1.jpeg?width=640&crop=smart&auto=webp&s=b4ea6c2438219fcfd25158eb5ad2b3405e47056d" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4hf9x/your_dumb/" target="_blank" style="display:block"><img src="https://preview.redd.it/l6ikjdq0zbzg1.jpeg?width=640&crop=smart&auto=webp&s=b4ea6c2438219fcfd25158eb5ad2b3405e47056d" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Your dumb</p>
                         <div class="meme-stats">
@@ -389,7 +344,7 @@
                 
                 <div class="meme-card" style="--i:5">
                     <div class="rank">#5</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4r3as/im_gonna_make_banks_today/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/9nx72xx0ndzg1.gif?width=640&crop=smart&s=56fbf572d87046f748b288bc597c5b11a95dd331" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4r3as/im_gonna_make_banks_today/" target="_blank" style="display:block"><img src="https://preview.redd.it/9nx72xx0ndzg1.gif?width=640&crop=smart&s=56fbf572d87046f748b288bc597c5b11a95dd331" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">I'm gonna make banks today</p>
                         <div class="meme-stats">
@@ -404,7 +359,7 @@
                 
                 <div class="meme-card" style="--i:6">
                     <div class="rank">#6</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4gj9p/time_to_get_working/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/sropljl8tbzg1.gif?width=320&crop=smart&s=7cb9e854313efa33b8874e4d7f47d66e6f4fe249" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4gj9p/time_to_get_working/" target="_blank" style="display:block"><img src="https://preview.redd.it/sropljl8tbzg1.gif?width=320&crop=smart&s=7cb9e854313efa33b8874e4d7f47d66e6f4fe249" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Time to get working</p>
                         <div class="meme-stats">
@@ -419,7 +374,7 @@
                 
                 <div class="meme-card" style="--i:7">
                     <div class="rank">#7</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4ubwg/lunch_raising/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/rcv0ij6u8ezg1.jpeg?width=640&crop=smart&auto=webp&s=0ad282ef43815bbc3712d7f60adf890f1c330445" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4ubwg/lunch_raising/" target="_blank" style="display:block"><img src="https://preview.redd.it/rcv0ij6u8ezg1.jpeg?width=640&crop=smart&auto=webp&s=0ad282ef43815bbc3712d7f60adf890f1c330445" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Lunch raising</p>
                         <div class="meme-stats">
@@ -434,7 +389,7 @@
                 
                 <div class="meme-card" style="--i:8">
                     <div class="rank">#8</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4t5yw/happy_mayo_drinko_de_sinko/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/jqiz4l7m0ezg1.png?width=640&crop=smart&auto=webp&s=af3d5abe9f15df807db8a92677d267f9aee471c3" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4t5yw/happy_mayo_drinko_de_sinko/" target="_blank" style="display:block"><img src="https://preview.redd.it/jqiz4l7m0ezg1.png?width=640&crop=smart&auto=webp&s=af3d5abe9f15df807db8a92677d267f9aee471c3" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">HAPPY MAYO DRINKO DE SINKO 😎😎😎😎😎</p>
                         <div class="meme-stats">
@@ -449,7 +404,7 @@
                 
                 <div class="meme-card" style="--i:9">
                     <div class="rank">#9</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4bdzv/dedicated_trump_voters_find_out_that_trump_robs/" target="_blank" style="display:block;height:100%"><img src="https://external-preview.redd.it/GltOqzcIZvKx2KoB2tl5NjQgCDJUr3UYuDiDPRuhbSc.jpeg?width=640&crop=smart&auto=webp&s=d2777da572bb2a0ae0d5224dab24b19c709c04d0" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/okbuddyretard/comments/1t4bdzv/dedicated_trump_voters_find_out_that_trump_robs/" target="_blank" style="display:block"><img src="https://external-preview.redd.it/GltOqzcIZvKx2KoB2tl5NjQgCDJUr3UYuDiDPRuhbSc.jpeg?width=640&crop=smart&auto=webp&s=d2777da572bb2a0ae0d5224dab24b19c709c04d0" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Dedicated Trump voters find out that Trump robs them to help the rich</p>
                         <div class="meme-stats">
@@ -469,7 +424,7 @@
             <div class="meme-grid">
                 <div class="meme-card" style="--i:1">
                     <div class="rank">#1</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4heoc/blursed_apologize_to_a_girl/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/weukdspwybzg1.jpeg?width=640&crop=smart&auto=webp&s=8dde2cd2dce25044fdaec8afc16c4c198c5f5f85" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4heoc/blursed_apologize_to_a_girl/" target="_blank" style="display:block"><img src="https://preview.redd.it/weukdspwybzg1.jpeg?width=640&crop=smart&auto=webp&s=8dde2cd2dce25044fdaec8afc16c4c198c5f5f85" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed apologize to a girl</p>
                         <div class="meme-stats">
@@ -484,7 +439,7 @@
                 
                 <div class="meme-card" style="--i:2">
                     <div class="rank">#2</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4evsn/blursed_luigi/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/pbh7ekb0ibzg1.jpeg?width=640&crop=smart&auto=webp&s=70025870acfd58a38af107d6e69a6795d74aa70c" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4evsn/blursed_luigi/" target="_blank" style="display:block"><img src="https://preview.redd.it/pbh7ekb0ibzg1.jpeg?width=640&crop=smart&auto=webp&s=70025870acfd58a38af107d6e69a6795d74aa70c" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed_Luigi</p>
                         <div class="meme-stats">
@@ -499,7 +454,7 @@
                 
                 <div class="meme-card" style="--i:3">
                     <div class="rank">#3</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4m0eo/blursed_earth/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/ed5thnukrczg1.jpeg?width=640&crop=smart&auto=webp&s=4d115fb80aa1243e7dfe5e9aca5f3cc99c942977" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4m0eo/blursed_earth/" target="_blank" style="display:block"><img src="https://preview.redd.it/ed5thnukrczg1.jpeg?width=640&crop=smart&auto=webp&s=4d115fb80aa1243e7dfe5e9aca5f3cc99c942977" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed earth</p>
                         <div class="meme-stats">
@@ -514,7 +469,7 @@
                 
                 <div class="meme-card" style="--i:4">
                     <div class="rank">#4</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4hvus/blursed_a_girl_in_a_library/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/ye7i59102czg1.jpeg?width=640&crop=smart&auto=webp&s=fadb9421156487090092587652c296bf72792c43" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4hvus/blursed_a_girl_in_a_library/" target="_blank" style="display:block"><img src="https://preview.redd.it/ye7i59102czg1.jpeg?width=640&crop=smart&auto=webp&s=fadb9421156487090092587652c296bf72792c43" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed a girl in a library</p>
                         <div class="meme-stats">
@@ -529,7 +484,7 @@
                 
                 <div class="meme-card" style="--i:5">
                     <div class="rank">#5</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t535wv/blursed_win/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/93nsx8oe8gzg1.jpeg?width=320&crop=smart&auto=webp&s=98514ff70f19122a4f2e647eaffc62390d9240fc" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t535wv/blursed_win/" target="_blank" style="display:block"><img src="https://preview.redd.it/93nsx8oe8gzg1.jpeg?width=320&crop=smart&auto=webp&s=98514ff70f19122a4f2e647eaffc62390d9240fc" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed win</p>
                         <div class="meme-stats">
@@ -544,7 +499,7 @@
                 
                 <div class="meme-card" style="--i:6">
                     <div class="rank">#6</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4fx6z/blursed_foul/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/5aq4fy56pbzg1.jpeg?width=640&crop=smart&auto=webp&s=7ca982dadc795cf66da79135c62751dca6c08fb6" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4fx6z/blursed_foul/" target="_blank" style="display:block"><img src="https://preview.redd.it/5aq4fy56pbzg1.jpeg?width=640&crop=smart&auto=webp&s=7ca982dadc795cf66da79135c62751dca6c08fb6" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed foul</p>
                         <div class="meme-stats">
@@ -559,7 +514,7 @@
                 
                 <div class="meme-card" style="--i:7">
                     <div class="rank">#7</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t54780/blursed_prep/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/fr30a2waigzg1.png?width=640&crop=smart&auto=webp&s=f397ea405f507f4a401fed090d7070e3b0a59f09" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t54780/blursed_prep/" target="_blank" style="display:block"><img src="https://preview.redd.it/fr30a2waigzg1.png?width=640&crop=smart&auto=webp&s=f397ea405f507f4a401fed090d7070e3b0a59f09" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed prep</p>
                         <div class="meme-stats">
@@ -574,22 +529,7 @@
                 
                 <div class="meme-card" style="--i:8">
                     <div class="rank">#8</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4rd1m/blursed_goal/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/939zdmtqodzg1.jpeg?width=640&crop=smart&auto=webp&s=751fe71d6b30892a9c63b7046effa973b0706c9b" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
-                    <div class="meme-info">
-                        <p class="meme-title">blursed goal</p>
-                        <div class="meme-stats">
-                            <span class="stat ups">▲ N/A</span>
-                            <span class="stat ratio">💯 100%</span>
-                            <span class="stat comments">💬 0</span>
-                            
-                        </div>
-                        <a href="https://www.reddit.com/r/blursedimages/comments/1t4rd1m/blursed_goal/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
-                    </div>
-                </div>
-                
-                <div class="meme-card" style="--i:9">
-                    <div class="rank">#9</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t54kn4/blursed_pumpkin/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/g895pfpmlgzg1.jpeg?width=320&crop=smart&auto=webp&s=b56b081f4ddabdd50cb76fb1f6779f1b93f26ef4" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t54kn4/blursed_pumpkin/" target="_blank" style="display:block"><img src="https://preview.redd.it/g895pfpmlgzg1.jpeg?width=320&crop=smart&auto=webp&s=b56b081f4ddabdd50cb76fb1f6779f1b93f26ef4" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed pumpkin</p>
                         <div class="meme-stats">
@@ -602,9 +542,24 @@
                     </div>
                 </div>
                 
+                <div class="meme-card" style="--i:9">
+                    <div class="rank">#9</div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t4rd1m/blursed_goal/" target="_blank" style="display:block"><img src="https://preview.redd.it/939zdmtqodzg1.jpeg?width=640&crop=smart&auto=webp&s=751fe71d6b30892a9c63b7046effa973b0706c9b" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-info">
+                        <p class="meme-title">blursed goal</p>
+                        <div class="meme-stats">
+                            <span class="stat ups">▲ N/A</span>
+                            <span class="stat ratio">💯 100%</span>
+                            <span class="stat comments">💬 0</span>
+                            
+                        </div>
+                        <a href="https://www.reddit.com/r/blursedimages/comments/1t4rd1m/blursed_goal/" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
+                    </div>
+                </div>
+                
                 <div class="meme-card" style="--i:10">
                     <div class="rank">#10</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t56vpw/blursed_spongebob/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/6qjfvrieahzg1.jpeg?width=640&crop=smart&auto=webp&s=485c3cc90d92e9ccad04f5d11e91d6a0df9fabd4" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/blursedimages/comments/1t56vpw/blursed_spongebob/" target="_blank" style="display:block"><img src="https://preview.redd.it/6qjfvrieahzg1.jpeg?width=640&crop=smart&auto=webp&s=485c3cc90d92e9ccad04f5d11e91d6a0df9fabd4" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Blursed spongebob</p>
                         <div class="meme-stats">
@@ -624,7 +579,7 @@
             <div class="meme-grid">
                 <div class="meme-card" style="--i:1">
                     <div class="rank">#1</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4x3zm/hello_homelander/" target="_blank" style="display:block;height:100%"><img src="https://external-preview.redd.it/M2E1NTh3ZG10ZXpnMazpf9jVdiAi9sHgL9XEp1N5xKuqA4B-kTthpx88EakQ.png?width=320&crop=smart&auto=webp&s=adb98ac34cc342d32d5b97298ae53408a552348f" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4x3zm/hello_homelander/" target="_blank" style="display:block"><img src="https://external-preview.redd.it/M2E1NTh3ZG10ZXpnMazpf9jVdiAi9sHgL9XEp1N5xKuqA4B-kTthpx88EakQ.png?width=320&crop=smart&auto=webp&s=adb98ac34cc342d32d5b97298ae53408a552348f" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">Hello homelander</p>
                         <div class="meme-stats">
@@ -639,7 +594,7 @@
                 
                 <div class="meme-card" style="--i:2">
                     <div class="rank">#2</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4umti/yuore_everything_is_shrank/" target="_blank" style="display:block;height:100%"><img src="https://external-preview.redd.it/ZGY4ZmVybjFiZXpnMUfG6tdeKJeCIhk9G8oxj8EFWD1CC3O9lN3yGhlhAyYv.png?width=320&crop=smart&auto=webp&s=1563a0b7c96a6f91aeb19aa1751c923a17025865" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4umti/yuore_everything_is_shrank/" target="_blank" style="display:block"><img src="https://external-preview.redd.it/ZGY4ZmVybjFiZXpnMUfG6tdeKJeCIhk9G8oxj8EFWD1CC3O9lN3yGhlhAyYv.png?width=320&crop=smart&auto=webp&s=1563a0b7c96a6f91aeb19aa1751c923a17025865" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">yuore EVERYTHING is ;; shrank</p>
                         <div class="meme-stats">
@@ -654,7 +609,7 @@
                 
                 <div class="meme-card" style="--i:3">
                     <div class="rank">#3</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4fo29/yor_dav_blunt_is_danmn_sneeker_o_tool/" target="_blank" style="display:block;height:100%"><img src="https://preview.redd.it/8uz3qvfcnbzg1.jpeg?width=640&crop=smart&auto=webp&s=e287a29b3f7f1ae3f9425dd2c142329a78e19d2f" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4fo29/yor_dav_blunt_is_danmn_sneeker_o_tool/" target="_blank" style="display:block"><img src="https://preview.redd.it/8uz3qvfcnbzg1.jpeg?width=640&crop=smart&auto=webp&s=e287a29b3f7f1ae3f9425dd2c142329a78e19d2f" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">yor dav blunt is danmn sneeker o tool</p>
                         <div class="meme-stats">
@@ -669,7 +624,7 @@
                 
                 <div class="meme-card" style="--i:4">
                     <div class="rank">#4</div>
-                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4gkbd/ihaveihaveihave_no_idea/" target="_blank" style="display:block;height:100%"><img src="https://external-preview.redd.it/ZTloeTh2amJ0YnpnMSgTI2ubDqBa5FweEjNUb1mYxlxHzbS6voaRfKQloqxO.png?width=640&crop=smart&auto=webp&s=0d6cb0fe4d79ee4d0662d048ff8ee0312021d5b0" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
+                    <div class="meme-img-wrap"><a href="https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t4gkbd/ihaveihaveihave_no_idea/" target="_blank" style="display:block"><img src="https://external-preview.redd.it/ZTloeTh2amJ0YnpnMSgTI2ubDqBa5FweEjNUb1mYxlxHzbS6voaRfKQloqxO.png?width=640&crop=smart&auto=webp&s=0d6cb0fe4d79ee4d0662d048ff8ee0312021d5b0" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML='<div class=no-img>🖼️</div>'"/></a></div>
                     <div class="meme-info">
                         <p class="meme-title">IhaveIhaveIhave No Idea</p>
                         <div class="meme-stats">
@@ -684,17 +639,13 @@
                 </div>
         </section>
         </main>
-
 <footer>
   Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages, r/ihaveihaveihavereddit<br>
-  Sortirano po: upvote-ovi × ratio + engagement | Poslednje ažuriranje: 06.05.2026 11:38
+  Sortirano po: upvote-ovi × ratio + engagement | Poslednje ažuriranje: 06.05.2026 11:49
 </footer>
-
 <script>
-  // Skupi sve sekcije i napravi tabove
   const sections = document.querySelectorAll('.sub-section');
   const nav = document.getElementById('subNav');
-
   sections.forEach((sec, idx) => {
     const name = sec.dataset.sub;
     const btn = document.createElement('button');
@@ -712,37 +663,35 @@
 </script>
 <script>
   (function() {
-    // Sacuvaj trenutnu verziju
     var meta = document.querySelector('meta[name="generated"]');
     if (!meta) return;
     var current = meta.getAttribute('content');
-    var stored = sessionStorage.getItem('meme_version');
-
-    // Ako je verzija drugacija od zapamcene, osvezi
-    if (stored && stored !== current) {
-      sessionStorage.setItem('meme_version', current);
-      window.location.href = window.location.href.split('?')[0] + '?v=' + current.replace(/[^a-zA-Z0-9]/g, '');
-    } else {
-      sessionStorage.setItem('meme_version', current);
-    }
-
-    // Svakih 5 minuta fetchuj stranicu u pozadini i proveri da li ima nova verzija
+    try {
+      var stored = localStorage.getItem('meme_digest_v');
+      if (stored && stored !== current) {
+        localStorage.setItem('meme_digest_v', current);
+        window.location.replace(window.location.pathname + '?v=' + current);
+        return;
+      }
+      localStorage.setItem('meme_digest_v', current);
+    } catch(e) {}
     setInterval(function() {
-      fetch(window.location.href.split('?')[0] + '?check=' + Date.now(), {cache: 'no-store'})
+      fetch(window.location.pathname + '?nc=' + Date.now(), {cache: 'no-store'})
         .then(function(r) { return r.text(); })
         .then(function(html) {
           var match = html.match(/name="generated" content="([^"]+)"/);
-          if (match) {
-            var latest = match[1];
-            var saved = sessionStorage.getItem('meme_version');
+          if (!match) return;
+          var latest = match[1];
+          try {
+            var saved = localStorage.getItem('meme_digest_v');
             if (saved && latest !== saved) {
-              sessionStorage.setItem('meme_version', latest);
-              window.location.reload(true);
+              localStorage.setItem('meme_digest_v', latest);
+              window.location.replace(window.location.pathname + '?v=' + latest);
             }
-          }
+          } catch(e) {}
         })
         .catch(function() {});
-    }, 5 * 60 * 1000); // 5 minuta
+    }, 3 * 60 * 1000);
   })();
 </script>
 </body>
