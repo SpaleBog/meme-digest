@@ -18,28 +18,14 @@ def get_upvote_ratio_score(post):
     ups = post.get("ups", 0)
     ratio = post.get("upvote_ratio", 0.5)
     num_comments = post.get("num_comments", 0)
-    created_utc = post.get("created_utc", 0)
 
     # Bazni score: upvote-ovi * ratio
     base = ups * ratio
 
-    # Engagement bonus: komentari po upvotu (smesne stvari provociraju komentare)
-    engagement_bonus = 0
-    if ups > 0:
-        comment_ratio = num_comments / ups
-        engagement_bonus = comment_ratio * ups * 0.3
+    # Engagement bonus: svaki komentar dodaje 0.3 poena
+    engagement_bonus = num_comments * 0.3
 
-    # Velocity bonus: upvote-ovi po satu starosti posta
-    # Mladi post sa brzim rastom je interesantniji od starog sa mnogo upvota
-    # CAP: velocity bonus ne moze biti veci od baznog score-a (stiti stare dobro ocenjene postove)
-    velocity_bonus = 0
-    if created_utc > 0:
-        import time
-        age_hours = max((time.time() - created_utc) / 3600, 0.5)  # minimum 30 min
-        velocity = ups / age_hours
-        velocity_bonus = min(velocity * 0.5, base)  # max jednak baznom score-u
-
-    return base + engagement_bonus + velocity_bonus
+    return base + engagement_bonus
 
 def extract_image_from_html(html_content):
     match = re.search(r'<img[^>]+src="([^"]+)"', html_content)
