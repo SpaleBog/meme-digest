@@ -7,7 +7,7 @@ import pytz
 import re
 import time
 
-SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "ihaveihaveihavereddit"]
+SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "ihaveihaveihavereddit", "HolUp", "funny", "196", "cursedcomments", "TikTokCringe"]
 TOP_N = 10
 
 HEADERS = {
@@ -18,14 +18,27 @@ def get_upvote_ratio_score(post):
     ups = post.get("ups", 0)
     ratio = post.get("upvote_ratio", 0.5)
     num_comments = post.get("num_comments", 0)
-    awards = post.get("total_awards_received", 0)
+    created_utc = post.get("created_utc", 0)
+
+    # Bazni score: upvote-ovi * ratio
     base = ups * ratio
+
+    # Engagement bonus: komentari po upvotu (smesne stvari provociraju komentare)
     engagement_bonus = 0
     if ups > 0:
         comment_ratio = num_comments / ups
         engagement_bonus = comment_ratio * ups * 0.3
-    awards_bonus = awards * 500
-    return base + engagement_bonus + awards_bonus
+
+    # Velocity bonus: upvote-ovi po satu starosti posta
+    # Mladi post sa brzim rastom je interesantniji od starog sa mnogo upvota
+    velocity_bonus = 0
+    if created_utc > 0:
+        import time
+        age_hours = max((time.time() - created_utc) / 3600, 0.5)  # minimum 30 min
+        velocity = ups / age_hours
+        velocity_bonus = velocity * 0.5  # 50% tezine
+
+    return base + engagement_bonus + velocity_bonus
 
 def extract_image_from_html(html_content):
     match = re.search(r'<img[^>]+src="([^"]+)"', html_content)
@@ -120,8 +133,7 @@ def fetch_top_memes(subreddit):
         memes = []
         for post in posts:
             p = post["data"]
-            if p.get("is_self", False):
-                continue
+            is_self = p.get("is_self", False)
             image_url = p.get("url", "")
             if "reddit.com/gallery" in image_url or p.get("is_gallery", False):
                 try:
@@ -142,6 +154,10 @@ def fetch_top_memes(subreddit):
                 thumbnail = preview_url or image_url
             final_image = image_url if any(ext in image_url.lower() for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp", "i.redd.it", "i.imgur.com"]) else preview_url
             score = get_upvote_ratio_score(p)
+            self_text = p.get("selftext", "").strip() if is_self else ""
+            if len(self_text) > 300:
+                self_text = self_text[:297] + "..."
+
             memes.append({
                 "title": p.get("title", ""),
                 "score": score,
@@ -152,8 +168,10 @@ def fetch_top_memes(subreddit):
                 "reddit_url": f"https://www.reddit.com{p.get('permalink', '')}",
                 "author": p.get("author", ""),
                 "num_comments": p.get("num_comments", 0),
-                "awards": p.get("total_awards_received", 0),
+
                 "subreddit": subreddit,
+                "is_self": is_self,
+                "self_text": self_text,
             })
         memes.sort(key=lambda x: x["score"], reverse=True)
         result = memes[:TOP_N]
@@ -189,21 +207,34 @@ def generate_html(all_memes_by_sub, generated_at):
                     img_tag = '<a href="' + reddit_url + '" target="_blank" style="display:block"><img src="' + img_src + '" alt="meme" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=no-img>🖼️</div>\'"/></a>'
                 else:
                     img_tag = '<div class="no-img">🖼️</div>'
-                awards = m.get("awards", 0)
-                awards_badge = f'<span class="stat awards">🏆 {awards}</span>' if awards > 0 else ""
                 num_comments = m["num_comments"]
+                awards_badge = ""
+                is_self = m.get("is_self", False)
+                self_text = m.get("self_text", "")
+
+                if is_self:
+                    # Tekstualni post - prikaži preview teksta u kvadratu umesto slike
+                    preview_text = self_text if self_text else title_short
+                    top_block = '<a href="' + m["reddit_url"] + '" target="_blank" class="text-preview"><div class="text-preview-inner">' + preview_text + '</div></a>'
+                    body_html = ""
+                else:
+                    top_block = '<div class="meme-img-wrap">' + img_tag + '</div>'
+                    body_html = ""
+
                 cards_html += f"""
                 <div class="meme-card" style="--i:{i}">
                     <div class="rank">#{i}</div>
-                    <div class="meme-img-wrap">{img_tag}</div>
+                    {top_block}
                     <div class="meme-info">
                         <p class="meme-title">{title_short}</p>
+                        {body_html}
                         <div class="meme-stats">
-                            <span class="stat ups">▲ {ups_fmt}</span>
-                            <span class="stat ratio">💯 {ratio_pct}%</span>
-                            <span class="stat comments">💬 {num_comments}</span>
+                            {f'<span class="stat ups">▲ {ups_fmt}</span>' if ups > 0 else ""}
+                            {f'<span class="stat ratio">💯 {ratio_pct}%</span>' if ups > 0 else ""}
+                            {f'<span class="stat comments">💬 {num_comments}</span>' if ups > 0 else ""}
                             {awards_badge}
                         </div>
+                        {"" if ups > 0 else "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 80\" style=\"width:100%;max-width:220px;opacity:0.18;display:block;margin:0.4rem auto 0\"><rect x=\"2\" y=\"2\" width=\"256\" height=\"76\" rx=\"8\" fill=\"none\" stroke=\"#1B2A4A\" stroke-width=\"2\" stroke-dasharray=\"5 3\"/><rect x=\"10\" y=\"10\" width=\"240\" height=\"60\" rx=\"5\" fill=\"none\" stroke=\"#1B2A4A\" stroke-width=\"1\"/><text x=\"130\" y=\"38\" text-anchor=\"middle\" font-family=\"Bebas Neue,sans-serif\" font-size=\"22\" fill=\"#1B2A4A\" letter-spacing=\"5\">SPALE</text><line x1=\"18\" y1=\"44\" x2=\"242\" y2=\"44\" stroke=\"#1B2A4A\" stroke-width=\"1\"/><text x=\"130\" y=\"61\" text-anchor=\"middle\" font-family=\"Bebas Neue,sans-serif\" font-size=\"11\" fill=\"#1B2A4A\" letter-spacing=\"7\">DIGEST</text></svg>"}
                         <a href="{m['reddit_url']}" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
                     </div>
                 </div>
@@ -330,6 +361,39 @@ def generate_html(all_memes_by_sub, generated_at):
     border-radius: 8px; padding: 0.6rem; margin-top: 0.5rem; transition: background 0.15s;
   }}
   .view-btn:hover {{ background: var(--accent2); }}
+  .self-text {{
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }}
+  .text-post .meme-img-wrap {{ display: none; }}
+  .text-preview {{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+  }}
+  .text-preview-inner {{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.5;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }}
   footer {{ text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); }}
 </style>
 </head>
@@ -342,7 +406,7 @@ def generate_html(all_memes_by_sub, generated_at):
 <nav class="sub-nav" id="subNav"></nav>
 <main id="mainContent">{sections_html}</main>
 <footer>
-  Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages, r/ihaveihaveihavereddit<br>
+  Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages, r/ihaveihaveihavereddit, r/HolUp, r/funny, r/196, r/cursedcomments, r/TikTokCringe<br>
   Sortirano po: upvote-ovi × ratio + engagement | Poslednje ažuriranje: {date_str} {time_str}
 </footer>
 <script>
