@@ -7,7 +7,7 @@ import pytz
 import re
 import time
 
-SUBREDDITS = ["shitposting", "okbuddyretard", "blursedimages", "ihaveihaveihavereddit", "HolUp", "funny", "196", "cursedcomments", "TikTokCringe"]
+SUBREDDITS = ["196", "blursedimages", "shitposting", "okbuddyretard", "ihaveihaveihavereddit", "HolUp", "funny", "cursedcomments", "TikTokCringe"]
 TOP_N = 10
 
 HEADERS = {
@@ -196,7 +196,7 @@ def generate_html(all_memes_by_sub, generated_at):
         if not memes:
             cards_html = '<p style="color:#888;padding:1rem;">Nema podataka za danas.</p>'
         else:
-            STAMP_HTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" style="width:100%;max-width:220px;opacity:0.18;display:block;margin:0.4rem auto 0"><rect x="2" y="2" width="256" height="76" rx="8" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-dasharray="5 3"/><rect x="10" y="10" width="240" height="60" rx="5" fill="none" stroke="#1B2A4A" stroke-width="1"/><text x="130" y="38" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="22" fill="#1B2A4A" letter-spacing="5">SPALE</text><line x1="18" y1="44" x2="242" y2="44" stroke="#1B2A4A" stroke-width="1"/><text x="130" y="61" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="11" fill="#1B2A4A" letter-spacing="7">DIGEST</text></svg>'
+            STAMP_HTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" style="width:100%;max-width:220px;opacity:0.35;display:block;margin:0.4rem auto 0"><rect x="2" y="2" width="256" height="76" rx="8" fill="none" stroke="#A8A9AD" stroke-width="2" stroke-dasharray="5 3"/><rect x="10" y="10" width="240" height="60" rx="5" fill="none" stroke="#A8A9AD" stroke-width="1"/><text x="130" y="38" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="22" fill="#C0C0C0" letter-spacing="5">SPALE</text><line x1="18" y1="44" x2="242" y2="44" stroke="#A8A9AD" stroke-width="1"/><text x="130" y="61" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="11" fill="#C0C0C0" letter-spacing="7">DIGEST</text></svg>'
             cards_html = ""
             for i, m in enumerate(memes, 1):
                 ratio_pct = int(m["upvote_ratio"] * 100)
@@ -255,6 +255,7 @@ def generate_html(all_memes_by_sub, generated_at):
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dnevni Meme Digest – {date_str}</title>
 <meta name="generated" content="{ts}"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -295,10 +296,14 @@ def generate_html(all_memes_by_sub, generated_at):
     border-radius: 99px; padding: 0.3rem 1rem;
     font-size: 0.82rem; color: var(--accent2); font-weight: 500;
   }}
+  .sub-nav-wrap {{
+    max-width: 1100px; margin: 0 auto; padding: 1rem 1rem 0;
+    position: relative;
+  }}
   .sub-nav {{
     display: flex; overflow-x: auto; gap: 0.5rem;
-    padding: 1rem 1rem 0; max-width: 1100px; margin: 0 auto;
     scrollbar-width: none; -ms-overflow-style: none;
+    scroll-behavior: smooth;
   }}
   .sub-nav::-webkit-scrollbar {{ display: none; }}
   .sub-tab {{
@@ -308,6 +313,17 @@ def generate_html(all_memes_by_sub, generated_at):
     cursor: pointer; transition: all 0.2s ease; white-space: nowrap;
   }}
   .sub-tab.active {{ background: var(--accent); border-color: var(--accent); color: white; }}
+  .nav-arrow {{
+    position: absolute; top: 1rem; width: 2rem; height: 2rem;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 50%; cursor: pointer; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 0.9rem; color: var(--text); z-index: 10;
+    transition: background 0.2s;
+  }}
+  .nav-arrow:hover {{ background: var(--accent); color: white; border-color: var(--accent); }}
+  .nav-arrow.left {{ left: 0; }}
+  .nav-arrow.right {{ right: 0; }}
   main {{ max-width: 1100px; margin: 0 auto; padding: 1.2rem 1rem 4rem; }}
   .sub-section {{ display: none; }}
   .sub-section.active {{ display: block; }}
@@ -405,7 +421,11 @@ def generate_html(all_memes_by_sub, generated_at):
   <p class="tagline">Najbolji mimovi dana • Automatski sakupljeno</p>
   <span class="date-badge">📅 {date_str} u {time_str} CET</span>
 </header>
-<nav class="sub-nav" id="subNav"></nav>
+<div class="sub-nav-wrap">
+  <button class="nav-arrow left" id="navLeft" onclick="document.getElementById('subNav').scrollBy({{left:-200,behavior:'smooth'}})">‹</button>
+  <nav class="sub-nav" id="subNav"></nav>
+  <button class="nav-arrow right" id="navRight" onclick="document.getElementById('subNav').scrollBy({{left:200,behavior:'smooth'}})">›</button>
+</div>
 <main id="mainContent">{sections_html}</main>
 <footer>
   Generisano automatski iz r/shitposting, r/okbuddyretard, r/blursedimages, r/ihaveihaveihavereddit, r/HolUp, r/funny, r/196, r/cursedcomments, r/TikTokCringe<br>
@@ -443,23 +463,28 @@ def generate_html(all_memes_by_sub, generated_at):
       }}
       localStorage.setItem('meme_digest_v', current);
     }} catch(e) {{}}
-    setInterval(function() {{
-      fetch(window.location.pathname + '?nc=' + Date.now(), {{cache: 'no-store'}})
-        .then(function(r) {{ return r.text(); }})
-        .then(function(html) {{
-          var match = html.match(/name="generated" content="([^"]+)"/);
-          if (!match) return;
-          var latest = match[1];
-          try {{
-            var saved = localStorage.getItem('meme_digest_v');
-            if (saved && latest !== saved) {{
-              localStorage.setItem('meme_digest_v', latest);
-              window.location.replace(window.location.pathname + '?v=' + latest);
-            }}
-          }} catch(e) {{}}
-        }})
-        .catch(function() {{}});
-    }}, 3 * 60 * 1000);
+    function checkUpdate() {{
+      var req = new XMLHttpRequest();
+      req.open('GET', window.location.pathname + '?nc=' + Date.now(), true);
+      req.setRequestHeader('Cache-Control', 'no-cache, no-store');
+      req.setRequestHeader('Pragma', 'no-cache');
+      req.onload = function() {{
+        if (req.status !== 200) return;
+        var match = req.responseText.match(/name="generated" content="([^"]+)"/);
+        if (!match) return;
+        var latest = match[1];
+        try {{
+          var saved = localStorage.getItem('meme_digest_v');
+          if (saved && latest !== saved) {{
+            localStorage.setItem('meme_digest_v', latest);
+            window.location.replace(window.location.pathname + '?v=' + latest);
+          }}
+        }} catch(e) {{}}
+      }};
+      req.send();
+    }}
+    setTimeout(checkUpdate, 5000);
+    setInterval(checkUpdate, 2 * 60 * 1000);
   }})();
 </script>
 </body>
