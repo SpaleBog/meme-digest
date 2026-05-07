@@ -31,12 +31,13 @@ def get_upvote_ratio_score(post):
 
     # Velocity bonus: upvote-ovi po satu starosti posta
     # Mladi post sa brzim rastom je interesantniji od starog sa mnogo upvota
+    # CAP: velocity bonus ne moze biti veci od baznog score-a (stiti stare dobro ocenjene postove)
     velocity_bonus = 0
     if created_utc > 0:
         import time
         age_hours = max((time.time() - created_utc) / 3600, 0.5)  # minimum 30 min
         velocity = ups / age_hours
-        velocity_bonus = velocity * 0.5  # 50% tezine
+        velocity_bonus = min(velocity * 0.5, base)  # max jednak baznom score-u
 
     return base + engagement_bonus + velocity_bonus
 
@@ -195,6 +196,7 @@ def generate_html(all_memes_by_sub, generated_at):
         if not memes:
             cards_html = '<p style="color:#888;padding:1rem;">Nema podataka za danas.</p>'
         else:
+            STAMP_HTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" style="width:100%;max-width:220px;opacity:0.18;display:block;margin:0.4rem auto 0"><rect x="2" y="2" width="256" height="76" rx="8" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-dasharray="5 3"/><rect x="10" y="10" width="240" height="60" rx="5" fill="none" stroke="#1B2A4A" stroke-width="1"/><text x="130" y="38" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="22" fill="#1B2A4A" letter-spacing="5">SPALE</text><line x1="18" y1="44" x2="242" y2="44" stroke="#1B2A4A" stroke-width="1"/><text x="130" y="61" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="11" fill="#1B2A4A" letter-spacing="7">DIGEST</text></svg>'
             cards_html = ""
             for i, m in enumerate(memes, 1):
                 ratio_pct = int(m["upvote_ratio"] * 100)
@@ -234,7 +236,7 @@ def generate_html(all_memes_by_sub, generated_at):
                             {f'<span class="stat comments">💬 {num_comments}</span>' if ups > 0 else ""}
                             {awards_badge}
                         </div>
-                        {"" if ups > 0 else "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 260 80\" style=\"width:100%;max-width:220px;opacity:0.18;display:block;margin:0.4rem auto 0\"><rect x=\"2\" y=\"2\" width=\"256\" height=\"76\" rx=\"8\" fill=\"none\" stroke=\"#1B2A4A\" stroke-width=\"2\" stroke-dasharray=\"5 3\"/><rect x=\"10\" y=\"10\" width=\"240\" height=\"60\" rx=\"5\" fill=\"none\" stroke=\"#1B2A4A\" stroke-width=\"1\"/><text x=\"130\" y=\"38\" text-anchor=\"middle\" font-family=\"Bebas Neue,sans-serif\" font-size=\"22\" fill=\"#1B2A4A\" letter-spacing=\"5\">SPALE</text><line x1=\"18\" y1=\"44\" x2=\"242\" y2=\"44\" stroke=\"#1B2A4A\" stroke-width=\"1\"/><text x=\"130\" y=\"61\" text-anchor=\"middle\" font-family=\"Bebas Neue,sans-serif\" font-size=\"11\" fill=\"#1B2A4A\" letter-spacing=\"7\">DIGEST</text></svg>"}
+                        {STAMP_HTML if ups == 0 else ""}
                         <a href="{m['reddit_url']}" target="_blank" class="view-btn">Pogledaj na Reddit →</a>
                     </div>
                 </div>
