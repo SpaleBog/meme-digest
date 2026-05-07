@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T22:29:59.531325+00:00",
+  "generated_at": "2026-05-07T22:37:38.767303+00:00",
   "data": {
     "196": [
       {
@@ -12,8 +12,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t5sme3/late_night_druleves/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "rule",
@@ -25,8 +26,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t67nu0/rule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Stomp clap rule",
@@ -38,8 +40,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t6dxal/stomp_clap_rule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Fox RuleCloud",
@@ -51,8 +54,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t5sqo0/fox_rulecloud/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "rulefox",
@@ -64,8 +68,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t6e83g/rulefox/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "NorthernRule",
@@ -77,8 +82,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t6fq9l/northernrule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Rule",
@@ -90,8 +96,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t6fyvy/rule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Together :) Rule",
@@ -103,8 +110,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t5tpj4/together_rule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "2 yrs HRT :333",
@@ -116,8 +124,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t66u36/2_yrs_hrt_333/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Crule",
@@ -129,8 +138,9 @@
         "reddit_url": "https://www.reddit.com/r/196/comments/1t60nsm/crule/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "196"
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "blursedimages": [
@@ -144,8 +154,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t5xocu/blursed_mv_hondius/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed robbery",
@@ -157,8 +168,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t6589m/blursed_robbery/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed luck",
@@ -170,8 +182,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t67gq3/blursed_luck/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed_Fountain",
@@ -183,8 +196,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t5sh6r/blursed_fountain/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed_Pet",
@@ -196,8 +210,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t6jvqt/blursed_pet/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed selfie.",
@@ -209,8 +224,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t6951h/blursed_selfie/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed cups",
@@ -222,8 +238,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t6c37i/blursed_cups/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed McJail.",
@@ -235,8 +252,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t5zo90/blursed_mcjail/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "blursed_cardcaptor_sakura",
@@ -248,8 +266,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t61xg2/blursed_cardcaptor_sakura/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Blursed you’ll float too",
@@ -261,8 +280,9 @@
         "reddit_url": "https://www.reddit.com/r/blursedimages/comments/1t5xcdz/blursed_youll_float_too/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "blursedimages"
+        "subreddit": "blursedimages",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "shitposting": [
@@ -276,8 +296,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t68d0u/bro_got_caught_in_4k/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Grandmas strapped",
@@ -289,8 +310,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t5wmzc/grandmas_strapped/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "📡📡📡",
@@ -302,8 +324,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t65nlj/_/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "This anime aged harder than milk",
@@ -315,8 +338,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t663pu/this_anime_aged_harder_than_milk/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "📡📡📡",
@@ -328,8 +352,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t6ckdx/_/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "😡😡😡",
@@ -341,8 +366,9 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t63m1y/_/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "He's figured it out.",
@@ -354,25 +380,13 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t61swj/hes_figured_it_out/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
-      },
-      {
-        "title": "Then shoot Trevor at the end 📡📡📡",
-        "score": 43,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://preview.redd.it/xo0pxkcwflzg1.jpeg?width=640&crop=smart&auto=webp&s=a505d884408e01626982ae88759310a0f752087f",
-        "thumbnail": "https://preview.redd.it/xo0pxkcwflzg1.jpeg?width=640&crop=smart&auto=webp&s=a505d884408e01626982ae88759310a0f752087f",
-        "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t5s546/then_shoot_trevor_at_the_end/",
-        "author": "",
-        "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "😎",
-        "score": 42,
+        "score": 43,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/e2n2pondwozg1.jpeg?width=640&crop=smart&auto=webp&s=cad9eb476d7327e17c36f2f64b31bc0f2aa97ebe",
@@ -380,12 +394,13 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t66437/_/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "📡📡📡",
-        "score": 41,
+        "score": 42,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/MXF3bDB3YWRjcXpnMW63FRzyjTJNDDXOMxAsrbbJlCEX9BBkBW4d4ilbiwKx.png?width=320&crop=smart&auto=webp&s=5fdab89c77b8569c36e19f3fa8baf618d180f4b8",
@@ -393,8 +408,23 @@
         "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t6d26o/_/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "shitposting"
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
+        "title": "🐝🐝🐝",
+        "score": 41,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://preview.redd.it/1hc5nljwbnzg1.jpeg?width=640&crop=smart&auto=webp&s=cc9749deb93ea44a725179e03957f29cd19d44bc",
+        "thumbnail": "https://preview.redd.it/1hc5nljwbnzg1.jpeg?width=640&crop=smart&auto=webp&s=cc9749deb93ea44a725179e03957f29cd19d44bc",
+        "reddit_url": "https://www.reddit.com/r/shitposting/comments/1t60k5n/_/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "shitposting",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "okbuddyretard": [
@@ -408,8 +438,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6itc4/guys_i_think_i_found_a_cheat_trick/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "pot",
@@ -421,8 +452,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6jrp8/pot/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "ignore Tucker",
@@ -434,8 +466,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t5wc9g/ignore_tucker/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Just retarding around and got caught being retarded",
@@ -447,8 +480,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t5vcty/just_retarding_around_and_got_caught_being/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "sosighity 😞😞😞😞",
@@ -460,8 +494,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6m9mn/sosighity/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Fear the almighty glue",
@@ -473,8 +508,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6aiae/fear_the_almighty_glue/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "uhhhhnnnghhhh mmmmm rfk hhhhhhh",
@@ -486,8 +522,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6n7pb/uhhhhnnnghhhh_mmmmm_rfk_hhhhhhh/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Is he stupid why would he be born there???",
@@ -499,8 +536,9 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6oqou/is_he_stupid_why_would_he_be_born_there/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "wher u siting 🤔🤔🤔",
@@ -512,14 +550,15 @@
         "reddit_url": "https://www.reddit.com/r/okbuddyretard/comments/1t6npw8/wher_u_siting/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "okbuddyretard"
+        "subreddit": "okbuddyretard",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "ihaveihaveihavereddit": [
       {
         "title": "Youhavehavehavehavehavehavehavehave; sneajer",
-        "score": 4,
+        "score": 3,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/cnUxZDB6bmh0cHpnMdZqkzbU5OSWDSm8OlCBy5NclS7O117Hu44IhF4nsJUC.png?width=640&crop=smart&auto=webp&s=306bb751026174e70a44ffeb3574c9820bfaa298",
@@ -527,12 +566,13 @@
         "reddit_url": "https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t6a741/youhavehavehavehavehavehavehavehave_sneajer/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "ihaveihaveihavereddit"
+        "subreddit": "ihaveihaveihavereddit",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Top 10 Moments Stewie was both Funny and Real at the same time",
-        "score": 3,
+        "score": 2,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/s2anicqkemzg1.png?width=640&crop=smart&auto=webp&s=e9180080dfdc7e6ec5a50c417c9901c87b5863f5",
@@ -540,12 +580,13 @@
         "reddit_url": "https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t5woj7/top_10_moments_stewie_was_both_funny_and_real_at/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "ihaveihaveihavereddit"
+        "subreddit": "ihaveihaveihavereddit",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "yuohav ;; OOOUUUHHH",
-        "score": 2,
+        "score": 1,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/b2Q1NDBiejF1cHpnMXcCmqKYroAY1dPz4FF1m1OLBT_ufFVJdkUqdQl89A8V.png?width=320&crop=smart&auto=webp&s=e76158d9c7913e0135fd3719ec74e6a386c131b6",
@@ -553,21 +594,9 @@
         "reddit_url": "https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t6aa2x/yuohav_ooouuuhhh/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "ihaveihaveihavereddit"
-      },
-      {
-        "title": "yourdam; shirtkid is blu3",
-        "score": 1,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://external-preview.redd.it/dGk4c3F3azhnbHpnMa5WzxWqUw9wLN3fwbwuz9xmOSXJsUC84RMce0_3kwkN.png?width=320&crop=smart&auto=webp&s=4c084d5544389c3b3ac097e096213bf432aa5255",
-        "thumbnail": "https://external-preview.redd.it/dGk4c3F3azhnbHpnMa5WzxWqUw9wLN3fwbwuz9xmOSXJsUC84RMce0_3kwkN.png?width=320&crop=smart&auto=webp&s=4c084d5544389c3b3ac097e096213bf432aa5255",
-        "reddit_url": "https://www.reddit.com/r/ihaveihaveihavereddit/comments/1t5s72o/yourdam_shirtkid_is_blu3/",
-        "author": "",
-        "num_comments": 0,
-        "awards": 0,
-        "subreddit": "ihaveihaveihavereddit"
+        "subreddit": "ihaveihaveihavereddit",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "HolUp": [
@@ -581,8 +610,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t65n2h/chill_disney/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "I always liked the opera",
@@ -594,8 +624,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6l6f3/i_always_liked_the_opera/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Family dinner",
@@ -607,8 +638,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6ig3k/family_dinner/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Well that makes sense",
@@ -620,8 +652,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6ftin/well_that_makes_sense/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Nature is beautiful",
@@ -633,8 +666,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6mf8b/nature_is_beautiful/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Wait wdym \"too\"...",
@@ -646,8 +680,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t62mea/wait_wdym_too/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Holy Sanitizer",
@@ -659,8 +694,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6n2lq/holy_sanitizer/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "With your what?!?!",
@@ -672,8 +708,9 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t69vsb/with_your_what/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "That one friend who missed the memo",
@@ -685,14 +722,15 @@
         "reddit_url": "https://www.reddit.com/r/HolUp/comments/1t6io4f/that_one_friend_who_missed_the_memo/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "HolUp"
+        "subreddit": "HolUp",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "funny": [
       {
         "title": "Woke up wondering why my side felt weird, haven't got the remotest idea why",
-        "score": 31,
+        "score": 35,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/h5p8dihotmzg1.jpeg?width=640&crop=smart&auto=webp&s=91203261bc83f32b20a2a3964dfe8a160f359159",
@@ -700,12 +738,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t5yi61/woke_up_wondering_why_my_side_felt_weird_havent/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Someone is not pleased!",
-        "score": 30,
+        "score": 34,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/a3h5NmkwMGxib3pnMaFB6EZI9gmZ6dhsjEyK4qHyKxujTE-8G-qgnGgYIsHd.png?width=640&crop=smart&auto=webp&s=33f8c50a5b3d7759a559d1fa301419a63aeff165",
@@ -713,12 +752,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t643wx/someone_is_not_pleased/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Tony Soprano plays Elden Ring",
-        "score": 29,
+        "score": 33,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/cHhoeXppZTBicXpnMWkGyPoHBGItEhu7Zdf5EPZPm4PqCvPmlUxeP4TDZ7jR.png?width=640&crop=smart&auto=webp&s=b0a931af5abd61adfe5d0f84a9a1d66e9eec80f4",
@@ -726,12 +766,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t6cupm/tony_soprano_plays_elden_ring/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "DAMN he's got some serious honkers, a real set of badonkers!",
-        "score": 28,
+        "score": 32,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/NG5wcnBqbmgzbnpnMXSprrVC2FzWa7sbvk9RVUVylotE2q4v7AzYRIk2eazB.png?width=320&crop=smart&auto=webp&s=0912609a1967687d7b188a60e4d6506e60908078",
@@ -739,12 +780,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t5zn7v/damn_hes_got_some_serious_honkers_a_real_set_of/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Found this sign at a burger place in Tokyo. Wonder if this happens often? [OC]",
-        "score": 27,
+        "score": 31,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/czxfoqoxupzg1.jpeg?width=640&crop=smart&auto=webp&s=cc17a31c110acfa87809b5a002ddf0e8c0c8e3c4",
@@ -752,12 +794,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t6afq1/found_this_sign_at_a_burger_place_in_tokyo_wonder/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "With this kind of service I don’t mind paying extra at the pump 😂",
-        "score": 26,
+        "score": 30,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/cXJmb3owMGk2cnpnMQ44ByGdgiOnHyRVbiM32b1v8vY2MTAIrFyXvDbmayon.png?width=320&crop=smart&auto=webp&s=6c81818456f7416bd0c46fa9119389d2c63b0c0d",
@@ -765,12 +808,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t6hx3k/with_this_kind_of_service_i_dont_mind_paying/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "That person on the plane who has to be the first person to stand up when parked at the gate",
-        "score": 25,
+        "score": 29,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/YjJkdDBjYXp4cHpnMawu0SlvXsn2-uYKsp7M3C2jksb4lUCt8W3txfCuPpz3.png?width=640&crop=smart&auto=webp&s=620b586c9bb01696a4743334679971b1d7cca12a",
@@ -778,12 +822,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t6aujl/that_person_on_the_plane_who_has_to_be_the_first/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "This will cleanse your soul",
-        "score": 24,
+        "score": 28,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/308xwf6kfnzg1.png?width=640&crop=smart&auto=webp&s=33bd2ded48fddd2b03af7d3d233c2726d98fa9ba",
@@ -791,12 +836,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t60xyl/this_will_cleanse_your_soul/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "I found Rose’s Titanic Red Dress at the thrift store and I couldn’t resist… Now I know how girls feel trying on prom dresses ✨",
-        "score": 23,
+        "score": 27,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/aDlqN2QyeDRrbXpnMS83N6wzgY27Cww7dVvA-91kjaHF8fy-989rbGreLJrI.png?width=640&crop=smart&auto=webp&s=d58939904a1726ec317a0872f5b926cfaeba7c9d",
@@ -804,12 +850,13 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t5xcb3/i_found_roses_titanic_red_dress_at_the_thrift/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "(F)art",
-        "score": 22,
+        "score": 26,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/MzZwMG8xbmRhbXpnMdRC4Q7af1SpzqQ3Yhd6Ml5MvcnLu1hkJGUBM1HawVq_.png?width=640&crop=smart&auto=webp&s=7da0deae520c2f4cad2df075e749a5aa11205df1",
@@ -817,8 +864,9 @@
         "reddit_url": "https://www.reddit.com/r/funny/comments/1t5w4i3/fart/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "funny"
+        "subreddit": "funny",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "cursedcomments": [
@@ -832,8 +880,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t612rm/cursed_amazon/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_lighting",
@@ -845,8 +894,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t6bl6i/cursed_lighting/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "cursed_ dealer",
@@ -858,8 +908,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t62p6c/cursed_dealer/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_Bodywash",
@@ -871,8 +922,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t6ajmw/cursed_bodywash/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_Yuri",
@@ -884,8 +936,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t6jy5a/cursed_yuri/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "cursed_dragon",
@@ -897,8 +950,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t69rv4/cursed_dragon/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "cursed_thigh",
@@ -910,8 +964,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t6fsm0/cursed_thigh/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_Rick_and_Loli",
@@ -923,8 +978,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t662he/cursed_rick_and_loli/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_Seconds",
@@ -936,8 +992,9 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t61s8k/cursed_seconds/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Cursed_choices",
@@ -949,14 +1006,15 @@
         "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1t6ks7g/cursed_choices/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "cursedcomments"
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
       }
     ],
     "TikTokCringe": [
       {
         "title": "What were you like in the 90s?",
-        "score": 24,
+        "score": 23,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/YnJheWRkd3NpcXpnMQwVW65F0z7is-M6FGI8bQzVXuBAfdNFiI7CgmuOG-6D.png?width=640&crop=smart&auto=webp&s=fab67187a3ad004f082baa51c404fea5bd33de9c",
@@ -964,12 +1022,13 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t6e407/what_were_you_like_in_the_90s/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "This is why we can't have nice things:",
-        "score": 23,
+        "score": 22,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/bG85cDhkOWZsbnpnMa_3_PWhAnvVU1r_95CMYmyVPmWewWJgm87ulRn7GSo8.png?width=640&crop=smart&auto=webp&s=fb72ef8ee5e830af676f9be8049cb775bf64456c",
@@ -977,12 +1036,13 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t61jx4/this_is_why_we_cant_have_nice_things/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "I found Rose’s Titanic Red Dress at the thrift store and I couldn’t resist… Now I know how girls feel trying on prom dresses ✨",
-        "score": 22,
+        "score": 21,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/N2Qxc2VkNGNtbnpnMS83N6wzgY27Cww7dVvA-91kjaHF8fy-989rbGreLJrI.png?width=640&crop=smart&auto=webp&s=5693dec95378219eef948e2ed252e53b253ad8ce",
@@ -990,12 +1050,13 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t61nbc/i_found_roses_titanic_red_dress_at_the_thrift/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Gen Z needs to leave millennials ALONE.",
-        "score": 21,
+        "score": 20,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/dTZvaGxlemV1cHpnMRA6gfjfmHW2y1PXbf0kCFSJGCo9M4rl4o1pJpm7nlBs.png?width=320&crop=smart&auto=webp&s=8e312a25aa98d9a39a81a3b7fe7ad0a1fb7fa6ca",
@@ -1003,12 +1064,13 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t6abya/gen_z_needs_to_leave_millennials_alone/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Brazil banned men from attending a football match after a brawl broke out between the fans. Only women and children were allowed to enter the stadium",
-        "score": 20,
+        "score": 19,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/OTZiZnhwc3M0bXpnMSo0DzLoh4XTJEvih8TMtPOY34qnV2F6i71C5TVNbP12.png?width=320&crop=smart&auto=webp&s=16dc34708a4a2958a8170dfb751f0168a85b111f",
@@ -1016,12 +1078,13 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5vf97/brazil_banned_men_from_attending_a_football_match/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Brunch with no arms",
-        "score": 19,
+        "score": 18,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/MzVqMmFna29xbXpnMc91Xvpq6TbiyB8vZ2f3AgjlPUdJKeSuEeFeC_nA1GCC.png?width=640&crop=smart&auto=webp&s=07731e9f251d4ebbbf67d882cd71184e88dbecaa",
@@ -1029,21 +1092,9 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5y5kn/brunch_with_no_arms/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
-      },
-      {
-        "title": "Dogs seem to be permitted to relieve themselves in the middle of this UK-based Gordon Ramsay restaurant and nobody seems to care not even ramsay himself",
-        "score": 18,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://external-preview.redd.it/aGR3cjh2a3pnbHpnMWGRpd4ZN8JG8MEO4f5JOKjjFBffb5118F4Vqh7E0SA4.png?width=640&crop=smart&auto=webp&s=44c30138d8b670a71b460f7abb06875d7f6bccfb",
-        "thumbnail": "https://external-preview.redd.it/aGR3cjh2a3pnbHpnMWGRpd4ZN8JG8MEO4f5JOKjjFBffb5118F4Vqh7E0SA4.png?width=640&crop=smart&auto=webp&s=44c30138d8b670a71b460f7abb06875d7f6bccfb",
-        "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5sak5/dogs_seem_to_be_permitted_to_relieve_themselves/",
-        "author": "",
-        "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "Some people should not be allowed to use the internet",
@@ -1055,8 +1106,9 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5ujx4/some_people_should_not_be_allowed_to_use_the/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "I’d never open my door for anyone I wasn’t imminently expecting. IJS.",
@@ -1068,8 +1120,9 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5wtq7/id_never_open_my_door_for_anyone_i_wasnt/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       },
       {
         "title": "He had me in the first half",
@@ -1081,8 +1134,23 @@
         "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t5vocc/he_had_me_in_the_first_half/",
         "author": "",
         "num_comments": 0,
-        "awards": 0,
-        "subreddit": "TikTokCringe"
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
+        "title": "Feeding a Blue Fin Tuna Farm",
+        "score": 14,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://external-preview.redd.it/OXJxNnV5YXQ0cnpnMew3vAM4xiUBSjrC2PYo924UIRrX5DjiIgeZmyYUBJ2o.png?width=320&crop=smart&auto=webp&s=bd9e2d885833db59187d147dc51f8bcb3758e649",
+        "thumbnail": "https://external-preview.redd.it/OXJxNnV5YXQ0cnpnMew3vAM4xiUBSjrC2PYo924UIRrX5DjiIgeZmyYUBJ2o.png?width=320&crop=smart&auto=webp&s=bd9e2d885833db59187d147dc51f8bcb3758e649",
+        "reddit_url": "https://www.reddit.com/r/TikTokCringe/comments/1t6hng5/feeding_a_blue_fin_tuna_farm/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "TikTokCringe",
+        "is_self": false,
+        "self_text": ""
       }
     ]
   }
