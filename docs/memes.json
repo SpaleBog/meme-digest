@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T07:03:21.163469+00:00",
+  "generated_at": "2026-07-10T10:58:20.881885+00:00",
   "data": {
     "196": [
       {
@@ -31,22 +31,8 @@
         "self_text": ""
       },
       {
-        "title": "rule",
-        "score": 48,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://i.redd.it/f2i4c34ds5ch1.jpeg",
-        "thumbnail": "https://i.redd.it/f2i4c34ds5ch1.jpeg",
-        "reddit_url": "https://www.reddit.com/r/196/comments/1urjh8y/rule/",
-        "author": "",
-        "num_comments": 0,
-        "subreddit": "196",
-        "is_self": false,
-        "self_text": ""
-      },
-      {
         "title": "Spectrulem",
-        "score": 47,
+        "score": 48,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/d3i89vzoi7ch1.jpeg?width=320&crop=smart&auto=webp&s=eba7d43c66c663743cd84961f13a8383def87583",
@@ -60,7 +46,7 @@
       },
       {
         "title": "Rule",
-        "score": 46,
+        "score": 47,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/jfio4ungv9ch1.jpeg?width=640&crop=smart&auto=webp&s=1989e2e59927cda14e8991947bd16a838150c0d2",
@@ -74,12 +60,26 @@
       },
       {
         "title": "ruleing 747",
-        "score": 45,
+        "score": 46,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/1eEXvWDGDyrYfkE1b31pAEFfXmVh7_cM15tLki0DOcU.png?width=640&crop=smart&auto=webp&s=5ec990a59308c3aaea28420d0a177752c589470a",
         "thumbnail": "https://external-preview.redd.it/1eEXvWDGDyrYfkE1b31pAEFfXmVh7_cM15tLki0DOcU.png?width=640&crop=smart&auto=webp&s=5ec990a59308c3aaea28420d0a177752c589470a",
         "reddit_url": "https://www.reddit.com/r/196/comments/1urvgpd/ruleing_747/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
+        "title": "Robot Rule",
+        "score": 45,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://i.redd.it/2n6yr2misach1.jpeg",
+        "thumbnail": "https://i.redd.it/2n6yr2misach1.jpeg",
+        "reddit_url": "https://www.reddit.com/r/196/comments/1us8cn0/robot_rule/",
         "author": "",
         "num_comments": 0,
         "subreddit": "196",
@@ -101,22 +101,8 @@
         "self_text": ""
       },
       {
-        "title": "Robot Rule",
-        "score": 43,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://i.redd.it/2n6yr2misach1.jpeg",
-        "thumbnail": "https://i.redd.it/2n6yr2misach1.jpeg",
-        "reddit_url": "https://www.reddit.com/r/196/comments/1us8cn0/robot_rule/",
-        "author": "",
-        "num_comments": 0,
-        "subreddit": "196",
-        "is_self": false,
-        "self_text": ""
-      },
-      {
         "title": "Rule",
-        "score": 42,
+        "score": 43,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://external-preview.redd.it/dXZxaXczMW5qOGNoMeudYoZfI6KWaufoG-bHqwHvZI56OV0LWnQ2e51JU04_.png?width=320&crop=smart&auto=webp&s=e873eb2580e89a448828f69e32b052ecda2e7e0d",
@@ -130,12 +116,26 @@
       },
       {
         "title": "Daily r(ule)eminder that trans men are cool and based too",
-        "score": 41,
+        "score": 42,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://i.redd.it/2tjnlw1tj7ch1.gif",
         "thumbnail": "https://i.redd.it/2tjnlw1tj7ch1.gif",
         "reddit_url": "https://www.reddit.com/r/196/comments/1urqn8r/daily_ruleeminder_that_trans_men_are_cool_and/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "196",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
+        "title": "3 rules left",
+        "score": 41,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://preview.redd.it/b3a0n40tt8ch1.png?width=320&crop=smart&auto=webp&s=8e9dc0f9178e1fc954ad22043e92e1c67dfc4845",
+        "thumbnail": "https://preview.redd.it/b3a0n40tt8ch1.png?width=320&crop=smart&auto=webp&s=8e9dc0f9178e1fc954ad22043e92e1c67dfc4845",
+        "reddit_url": "https://www.reddit.com/r/196/comments/1urxuys/3_rules_left/",
         "author": "",
         "num_comments": 0,
         "subreddit": "196",
@@ -293,7 +293,7 @@
     "cursedcomments": [
       {
         "title": "cursed_video",
-        "score": 10,
+        "score": 14,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/4qii1a7uo8ch1.jpeg?width=640&crop=smart&auto=webp&s=7273c39c38d6a1a5e4cd74a0be8601f2f1000041",
@@ -307,7 +307,7 @@
       },
       {
         "title": "Cursed_Eastern_European",
-        "score": 9,
+        "score": 13,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/d1btp1t8k7ch1.jpeg?width=640&crop=smart&auto=webp&s=61cd7db672bc3f41fa513f8b239f60d75eaaec50",
@@ -320,8 +320,22 @@
         "self_text": ""
       },
       {
+        "title": "Cursed_Vatican",
+        "score": 12,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://preview.redd.it/ah1m8874occh1.jpeg?width=640&crop=smart&auto=webp&s=72bb0fa136e8f255a08fde5afbc694f56f92d175",
+        "thumbnail": "https://preview.redd.it/ah1m8874occh1.jpeg?width=640&crop=smart&auto=webp&s=72bb0fa136e8f255a08fde5afbc694f56f92d175",
+        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1usg02c/cursed_vatican/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
         "title": "Cursed DNA collection...",
-        "score": 8,
+        "score": 11,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/9k6q1dh0jach1.png?width=640&crop=smart&auto=webp&s=85ccbe63467f1e648dcece04d7e94d12c60ec69d",
@@ -335,7 +349,7 @@
       },
       {
         "title": "Cursed_killer",
-        "score": 7,
+        "score": 10,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/ltbmhl0m99ch1.jpeg?width=640&crop=smart&auto=webp&s=471a9aa4704dc4a86325b77a84d0be7eca100b0a",
@@ -349,7 +363,7 @@
       },
       {
         "title": "Cursed Snacks",
-        "score": 6,
+        "score": 9,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/wcmlowq1s9ch1.png?width=640&crop=smart&auto=webp&s=86a46a20e6f7cb194374b23a3e0b9e32f0280a8a",
@@ -362,8 +376,22 @@
         "self_text": ""
       },
       {
+        "title": "Cursed_AMA",
+        "score": 8,
+        "ups": 0,
+        "upvote_ratio": 1.0,
+        "url": "https://preview.redd.it/8s3by5uwpcch1.jpeg?width=640&crop=smart&auto=webp&s=1955338ac6ea400b6187e12dfbc9406bff69ff1c",
+        "thumbnail": "https://preview.redd.it/8s3by5uwpcch1.jpeg?width=640&crop=smart&auto=webp&s=1955338ac6ea400b6187e12dfbc9406bff69ff1c",
+        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1usg6s3/cursed_ama/",
+        "author": "",
+        "num_comments": 0,
+        "subreddit": "cursedcomments",
+        "is_self": false,
+        "self_text": ""
+      },
+      {
         "title": "cursed_birthday",
-        "score": 5,
+        "score": 7,
         "ups": 0,
         "upvote_ratio": 1.0,
         "url": "https://preview.redd.it/l5d4fi6kj9ch1.jpeg?width=640&crop=smart&auto=webp&s=af07d0cbaa9ca9450ea345ad790dbb20fc995dec",
@@ -376,13 +404,13 @@
         "self_text": ""
       },
       {
-        "title": "Cursed_Hitler",
-        "score": 4,
+        "title": "cursed_predator",
+        "score": 6,
         "ups": 0,
         "upvote_ratio": 1.0,
-        "url": "https://preview.redd.it/pi65tpg9g8ch1.jpeg?width=640&crop=smart&auto=webp&s=24b649a43fe45510a475e1da22cf18aa03d9dc7d",
-        "thumbnail": "https://preview.redd.it/pi65tpg9g8ch1.jpeg?width=640&crop=smart&auto=webp&s=24b649a43fe45510a475e1da22cf18aa03d9dc7d",
-        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1urvoci/cursed_hitler/",
+        "url": "https://preview.redd.it/vyv4orekndch1.jpeg?width=640&crop=smart&auto=webp&s=0620f47af0306ea829e02bc0bed32e14e9189ac0",
+        "thumbnail": "https://preview.redd.it/vyv4orekndch1.jpeg?width=640&crop=smart&auto=webp&s=0620f47af0306ea829e02bc0bed32e14e9189ac0",
+        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1usjgxh/cursed_predator/",
         "author": "",
         "num_comments": 0,
         "subreddit": "cursedcomments",
@@ -390,41 +418,13 @@
         "self_text": ""
       },
       {
-        "title": "Cursed_incest support",
-        "score": 3,
+        "title": "cursed_tear",
+        "score": 5,
         "ups": 0,
         "upvote_ratio": 1.0,
-        "url": "https://preview.redd.it/7depu7qhx8ch1.png?width=320&crop=smart&auto=webp&s=d90400d7a49dd3a4ab95d7bb5fab221724efa7fd",
-        "thumbnail": "https://preview.redd.it/7depu7qhx8ch1.png?width=320&crop=smart&auto=webp&s=d90400d7a49dd3a4ab95d7bb5fab221724efa7fd",
-        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1urygyv/cursed_incest_support/",
-        "author": "",
-        "num_comments": 0,
-        "subreddit": "cursedcomments",
-        "is_self": false,
-        "self_text": ""
-      },
-      {
-        "title": "Cursed_Vatican",
-        "score": 2,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://preview.redd.it/ah1m8874occh1.jpeg?width=640&crop=smart&auto=webp&s=72bb0fa136e8f255a08fde5afbc694f56f92d175",
-        "thumbnail": "https://preview.redd.it/ah1m8874occh1.jpeg?width=640&crop=smart&auto=webp&s=72bb0fa136e8f255a08fde5afbc694f56f92d175",
-        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1usg02c/cursed_vatican/",
-        "author": "",
-        "num_comments": 0,
-        "subreddit": "cursedcomments",
-        "is_self": false,
-        "self_text": ""
-      },
-      {
-        "title": "Cursed FNAF",
-        "score": 1,
-        "ups": 0,
-        "upvote_ratio": 1.0,
-        "url": "https://preview.redd.it/01akw31o89ch1.jpeg?width=640&crop=smart&auto=webp&s=b394fa1d0bfd5a59b49baa0d29af342c1f33d3f6",
-        "thumbnail": "https://preview.redd.it/01akw31o89ch1.jpeg?width=640&crop=smart&auto=webp&s=b394fa1d0bfd5a59b49baa0d29af342c1f33d3f6",
-        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1us08nx/cursed_fnaf/",
+        "url": "https://preview.redd.it/h95s0vw83dch1.jpeg?width=640&crop=smart&auto=webp&s=4e7417b81b7a9aa7f74bdf97fabfa4ea355fe35f",
+        "thumbnail": "https://preview.redd.it/h95s0vw83dch1.jpeg?width=640&crop=smart&auto=webp&s=4e7417b81b7a9aa7f74bdf97fabfa4ea355fe35f",
+        "reddit_url": "https://www.reddit.com/r/cursedcomments/comments/1ushha9/cursed_tear/",
         "author": "",
         "num_comments": 0,
         "subreddit": "cursedcomments",
